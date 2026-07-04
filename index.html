@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Тарас Москаленко — Людина. Творець. Батько.</title>
-    <meta name="description" content="Тарас Москаленко — аніматор, 3D-друкар, гейм-девелопер, AI-інженер, нейропсихологічний дослідник. Багатогранна особистість з Карлсруе.">
+    <title>Тарас Москаленко — Людина. Творець.</title>
+    <meta name="description" content="Тарас Москаленко — спеціаліст з розвитку. Анімація для дітей, 3D-друк, гейм-девелопмент, AI-агенти. Багатогранна особистість з Карлсруе.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -206,10 +206,15 @@
 
         /* ─── PROJECTS ─── */
         .projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:24px;}
+        .project-card-link{
+            text-decoration:none;color:inherit;display:block;
+            border-radius:var(--radius);
+        }
         .project-card{
             background:var(--bg2);border-radius:var(--radius);
             padding:28px;border:1px solid rgba(255,255,255,0.04);
-            transition:all 0.3s;position:relative;overflow:hidden;
+            transition:all 0.3s;position:relative;overflow:hidden;height:100%;
+            cursor:pointer;
         }
         .project-card::before{
             content:'';position:absolute;top:0;left:0;right:0;height:3px;
@@ -242,6 +247,7 @@
             color:var(--text2);font-size:0.8rem;font-weight:500;
             text-decoration:none;transition:color 0.2s;
             display:inline-flex;align-items:center;gap:4px;
+            position:relative;z-index:2;
         }
         .project-links a:hover{color:var(--neon);}
 
@@ -321,22 +327,24 @@
     <div class="container">
         <div class="hero-grid">
             <div class="hero-text">
-                <div class="hero-badge">✨ Багатогранна особистість</div>
+                <div class="hero-badge">✨ Спеціаліст з розвитку</div>
                 <h1>
                     Привіт! Я<br>
                     <span class="gradient">Тарас Москаленко</span>
                 </h1>
                 <p class="hero-sub">
-                    Я не вмію робити щось одне. Анімація, 3D-друк, ігри, AI-агенти,
-                    нейропсихологія, волонтерство — для мене це різні інструменти
-                    однієї місії: допомагати людям розкривати потенціал.
+                    Я допомагаю людям — дітям і дорослим — робити крок 
+                    від «хочу» до «роблю». Анімація, технології, 
+                    психологія, волонтерство — для мене це інструменти 
+                    однієї місії: щоб людина відчула, що вона може.
                 </p>
                 <div class="hero-tags">
-                    <span class="hero-tag">🎬 Режисер анімації</span>
+                    <span class="hero-tag">🌱 Спеціаліст з розвитку</span>
+                    <span class="hero-tag">🎬 Анімація для дітей</span>
                     <span class="hero-tag">🖨️ 3D-друкар</span>
                     <span class="hero-tag">🎮 Гейм-девелопер</span>
                     <span class="hero-tag">🤖 AI-інженер</span>
-                    <span class="hero-tag">🧠 Нейропсихолог</span>
+                    <span class="hero-tag">🧠 Психологія розвитку</span>
                     <span class="hero-tag">🌍 Волонтер</span>
                 </div>
                 <div class="hero-cta">
@@ -346,7 +354,7 @@
             </div>
             <div class="hero-visual">
                 <div class="hero-avatar">
-                    <div class="hero-avatar-inner">🧑‍🎨</div>
+                    <div class="hero-avatar-inner">🌱</div>
                 </div>
                 <div class="hero-orbits">
                     <div class="orbit-item"></div>
@@ -366,26 +374,41 @@
         <h2 class="section-title">Людина, яка об'єднує світи</h2>
         <p class="section-desc">
             Я з Києва, живу в Карлсруе (Німеччина). За плечима — кіноосвіта,
-            диплом психолога, 10+ років досвіду в анімації та безкінечна
-            цікавість до технологій. Я об'єдную творчість, технічну експертизу
-            і людяність у проєктах, які мають сенс.
+            диплом психолога, досвід в анімації та безкінечна цікавість 
+            до того, як працює людина: від фізіології та хімії мозку до 
+            нейрональної парадигми біхевіоризму. 
+            Я об'єдную творчість, технічну експертизу і людяність 
+            у проєктах, які мають сенс.
         </p>
         <div class="about-grid">
             <div class="about-card">
-                <h3>🎯 Місія</h3>
+                <h3>🌱 Моє зараз</h3>
                 <p>
-                    Допомагати людям — дітям, дорослим, спільнотам — розкривати
-                    потенціал через творчість і технології. Я вірю, що
-                    найкращі рішення народжуються на перетині дисциплін.
+                    Найбільше я проявляю себе в проєкті <strong>«Дія до мрії»</strong>.
+                    Це не про менторство чи коучинг — це про те, щоб бути 
+                    напарником для людини, яка хоче зробити перший крок 
+                    до своєї мрії. Без рамок, без вікових обмежень, 
+                    через маленькі реальні експерименти.
                 </p>
             </div>
             <div class="about-card">
-                <h3>🛠️ Підхід</h3>
+                <h3>🎯 Місія</h3>
                 <p>
-                    Build > Plan. Я створюю працюючі продукти — ігри,
-                    інструменти, освітні програми. Кожен проєкт — це
-                    відповідь на реальну потребу, загорнута в якісний дизайн
-                    і зроблена власними руками.
+                    Допомагати людям — дітям, дорослим, спільнотам — 
+                    розкривати потенціал через творчість і технології. 
+                    Я вірю, що найкращі рішення народжуються на перетині 
+                    дисциплін. Не намагаюся вмістити себе в одну роль — 
+                    я будую міждисциплінарні проєкти.
+                </p>
+            </div>
+            <div class="about-card">
+                <h3>📚 Освіта та фокус</h3>
+                <p>
+                    Вивчав психологію, але завжди тяжів до наук на перетині: 
+                    фізіологія вищої нервової діяльності, хімія мозку, 
+                    нейрональна парадигма, біхевіоризм як методологія. 
+                    Анімацію розповсюджую як інструмент розвитку дітей — 
+                    навчаю дорослих робити мультики разом з дітьми.
                 </p>
             </div>
             <div class="about-card">
@@ -394,16 +417,8 @@
                     Координатор волонтерської 3D-ферми <strong>Стіна</strong>,
                     засновник групи підтримки <strong>Infinity Braves</strong>
                     для нейровідмінних дорослих, ініціатор проєкту
-                    <strong>«Дія до мрії»</strong>.
-                </p>
-            </div>
-            <div class="about-card">
-                <h3>👨‍👧‍👦 Родина</h3>
-                <p>
-                    Батько. Саме народження доньки змінило моє розуміння
-                    розвитку і навчання. Сьогодні я створюю освітні
-                    інструменти для дітей з РДУГ та особливостями розвитку,
-                    спираючись на власний досвід.
+                    <strong>«Дія до мрії»</strong>. Люблю гуляти, невеликі 
+                    походи та заняття спортом на свіжому повітрі 🏔️
                 </p>
             </div>
         </div>
@@ -421,29 +436,34 @@
         </p>
         <div class="facets-grid">
             <div class="facet-card">
+                <div class="facet-icon">🌱</div>
+                <h3>Розвиток</h3>
+                <p>Допомагаю людям переходити від «хочу» до «роблю». Через анімацію, технології, розмову. Без рамок і готових ролей.</p>
+            </div>
+            <div class="facet-card">
                 <div class="facet-icon">🎬</div>
-                <h3>Анімація & Кіно</h3>
-                <p>Режисер анімації, 10+ років. Стопмоушен, 2D, 3D. Менторство дітей. Підготовка до фестивалів (Annecy, Zlín).</p>
+                <h3>Анімація для розвитку</h3>
+                <p>Навчаю дорослих робити мультики з дітьми. Анімація — це не мистецтво заради мистецтва, а інструмент розвитку: проектне мислення, концентрація, доведення до кінця.</p>
             </div>
             <div class="facet-card">
                 <div class="facet-icon">🖨️</div>
                 <h3>3D-Друк</h3>
-                <p>Волонтерська 3D-ферма «Стіна» в Карлсруе (8 принтерів). Друк медичних компонентів, протезування, механічні вузли.</p>
+                <p>Волонтерська 3D-ферма «Стіна» в Карлсруе (8 принтерів). Друк медичних компонентів, протезування, механічні вузли, освітні моделі.</p>
             </div>
             <div class="facet-card">
                 <div class="facet-icon">🎮</div>
                 <h3>Гейм-девелопмент</h3>
-                <p>HTML5 ігри: Recoil Gun, BitSprite, Xtlan, Habitat OS. Фізика, канвас, ігрові рушії з нуля.</p>
+                <p>HTML5 ігри: Recoil Gun, BitSprite, Xtlan, Habitat OS. Фізика, канвас, ігрові рушії з нуля. Гра як середовище розвитку.</p>
             </div>
             <div class="facet-card">
                 <div class="facet-icon">🤖</div>
                 <h3>AI & Агенти</h3>
-                <p>Multi-agent системи (Hermes SKVA), AI-автоматизація, власні LLM-пайплайни, API-інтеграції.</p>
+                <p>Multi-agent системи (Hermes SKVA), AI-автоматизація, власні LLM-пайплайни, API-інтеграції. Використовую AI як інструмент, не як ціль.</p>
             </div>
             <div class="facet-card">
                 <div class="facet-icon">🧠</div>
-                <h3>Нейропсихологія</h3>
-                <p>Дослідження нейровідмінності (РАС, СДВГ). NeuroMarker Suite, Aim Lab Scientist. Скринінг-інструменти.</p>
+                <h3>Психологія розвитку</h3>
+                <p>Фізіологія ВНД, хімія мозку, нейрональна парадигма, біхевіоризм. NeuroMarker Suite, Aim Lab Scientist. Скринінг і дослідження.</p>
             </div>
             <div class="facet-card">
                 <div class="facet-icon">📱</div>
@@ -451,14 +471,9 @@
                 <p>Від концепту до деплою: Django, Vue, HTML/JS/CSS. Telegram боти, SMM-автоматизація, мобільні застосунки.</p>
             </div>
             <div class="facet-card">
-                <div class="facet-icon">📐</div>
-                <h3>CAD & Інженерія</h3>
-                <p>FreeCAD, OpenSCAD, build123d. Робототехніка, модульні механізми, 3D-моделювання для друку.</p>
-            </div>
-            <div class="facet-card">
-                <div class="facet-icon">🌱</div>
-                <h3>Спільноти</h3>
-                <p>Волонтерство, групи підтримки, освітні ініціативи. Вірю у силу людей, які об'єднуються навколо сенсу.</p>
+                <div class="facet-icon">🏔️</div>
+                <h3>Активний відпочинок</h3>
+                <p>Люблю гуляти, невеликі походи, спорт на свіжому повітрі. Свіже повітря і рух — моя перезавантажувальна кнопка.</p>
             </div>
         </div>
     </div>
@@ -468,31 +483,51 @@
 <section id="projects">
     <div class="container">
         <div class="section-label">✧ Проєкти</div>
-        <h2 class="section-title">Що я створив</h2>
+        <h2 class="section-title">Проєкти</h2>
         <p class="section-desc">
-            Всі проєкти — відкриті на GitHub. Кожен — це реальний продукт,
-            яким я користуюся сам або який допомагає іншим.
+            Кожен проєкт — це реальний продукт, яким я користуюся сам 
+            або який допомагає іншим. Натисніть на картку — перейдете 
+            на сайт або GitHub.
         </p>
         <div class="projects-grid">
 
+            <!-- Дія до мрії (primary project) -->
+            <a href="https://fil-m.github.io/diya-do-mriyi/" target="_blank" class="project-card-link">
+            <div class="project-card" style="--accent-card:#f97316;border-color:rgba(249,115,22,0.15);">
+                <div class="project-cat">🌱 Сенс цього всього</div>
+                <h3>★ Дія до мрії</h3>
+                <p>Мій центральний проєкт. Безкоштовна ініціатива: напарник для старту. Допомагаю перейти від мрії до першої реальної дії через маленькі експерименти. 3 місця, без вікових обмежень. Тут я найбільше проявляю себе.</p>
+                <div class="project-techs">
+                    <span class="project-tech">HTML</span>
+                    <span class="project-tech">Сенс</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Fil-m/diya-do-mriyi" target="_blank" onclick="event.stopPropagation()">🐙 GitHub</a>
+                </div>
+            </div>
+            </a>
+
             <!-- Animation Mentors -->
+            <a href="https://fil-m.github.io/animation_mentors/" target="_blank" class="project-card-link">
             <div class="project-card" style="--accent-card:#6366f1;">
-                <div class="project-cat">🎬 Анімація & Освіта</div>
+                <div class="project-cat">🎬 Анімація та розвиток</div>
                 <h3>Animation Mentors</h3>
-                <p>Менторська програма з анімації для дітей 7-18 років. ADHD-friendly підхід, підготовка до міжнародних фестивалів. Формат «ментор — дитина — батьки».</p>
+                <p>Навчаю дорослих робити мультики з дітьми. ADHD-friendly підхід, підготовка до міжнародних фестивалів. Формат «ментор — дитина — батьки». Анімація як інструмент розвитку.</p>
                 <div class="project-techs">
                     <span class="project-tech">HTML</span>
                     <span class="project-tech">CSS</span>
                     <span class="project-tech">JS</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/Fil-m/animation_mentors" target="_blank">🐙 GitHub</a>
+                    <a href="https://github.com/Fil-m/animation_mentors" target="_blank" onclick="event.stopPropagation()">🐙 GitHub</a>
                 </div>
             </div>
+            </a>
 
             <!-- Стіна 3D -->
+            <a href="https://fil-m.github.io/stina-3d/" target="_blank" class="project-card-link">
             <div class="project-card" style="--accent-card:#10b981;">
-                <div class="project-cat">🖨️ 3D-Друк & Волонтерство</div>
+                <div class="project-cat">🖨️ 3D-Друк та Волонтерство</div>
                 <h3>Стіна 3D друкарня</h3>
                 <p>Бюджетна волонтерська 3D-ферма в Карлсруе. Друк медичних компонентів, протезів, освітніх моделей. 8 принтерів, спільнота волонтерів.</p>
                 <div class="project-techs">
@@ -501,12 +536,13 @@
                     <span class="project-tech">FreeCAD</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/Fil-m/stina-3d" target="_blank">🐙 GitHub</a>
-                    <a href="https://fil-m.github.io/stina-3d/" target="_blank">🌐 Сайт</a>
+                    <a href="https://github.com/Fil-m/stina-3d" target="_blank" onclick="event.stopPropagation()">🐙 GitHub</a>
                 </div>
             </div>
+            </a>
 
-            <!-- Recoil Gun -->
+            <!-- Recoil Gun (no deploy site, card -> GitHub) -->
+            <a href="https://github.com/Fil-m/recoil-game" target="_blank" class="project-card-link">
             <div class="project-card" style="--accent-card:#ef4444;">
                 <div class="project-cat">🎮 Ігри</div>
                 <h3>Recoil Gun</h3>
@@ -516,14 +552,13 @@
                     <span class="project-tech">Canvas</span>
                     <span class="project-tech">HTML</span>
                 </div>
-                <div class="project-links">
-                    <a href="https://github.com/Fil-m/recoil-game" target="_blank">🐙 GitHub</a>
-                </div>
             </div>
+            </a>
 
             <!-- Infinity Braves -->
+            <a href="https://github.com/Fil-m/--braves" target="_blank" class="project-card-link">
             <div class="project-card" style="--accent-card:#7c3aed;">
-                <div class="project-cat">🧠 Нейропсихологія & Спільнота</div>
+                <div class="project-cat">🧠 Спільнота</div>
                 <h3>Infinity Braves</h3>
                 <p>Група підтримки для нейровідмінних дорослих (РАС, СДВГ) в Карлсруе. Безпечний простір, скринінг, німецько-українська спільнота.</p>
                 <div class="project-techs">
@@ -531,16 +566,15 @@
                     <span class="project-tech">Python</span>
                     <span class="project-tech">Django</span>
                 </div>
-                <div class="project-links">
-                    <a href="https://github.com/Fil-m/--braves" target="_blank">🐙 GitHub</a>
-                </div>
             </div>
+            </a>
 
             <!-- Habitat OS -->
+            <a href="https://github.com/Fil-m/habitat-os-test" target="_blank" class="project-card-link">
             <div class="project-card" style="--accent-card:#00e5ff;">
                 <div class="project-cat">🎮 Платформа</div>
                 <h3>Habitat OS</h3>
-                <p>Мобільна ігрова платформа-ОС. Match-3, Git-чат, магазин скінів, міні-ігри. Vue-архітектура, модульна система. Версія для тестування та воркшоп.</p>
+                <p>Мобільна ігрова платформа-ОС. Match-3, Git-чат, магазин скінів, міні-ігри. Vue-архітектура, модульна система. Тест + воркшоп.</p>
                 <div class="project-techs">
                     <span class="project-tech">HTML</span>
                     <span class="project-tech">CSS</span>
@@ -548,12 +582,13 @@
                     <span class="project-tech">Python</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/Fil-m/habitat-os-test" target="_blank">🐙 Test</a>
-                    <a href="https://github.com/Fil-m/habitat-os-workshop" target="_blank">🐙 Workshop</a>
+                    <a href="https://github.com/Fil-m/habitat-os-workshop" target="_blank" onclick="event.stopPropagation()">🐙 Workshop</a>
                 </div>
             </div>
+            </a>
 
             <!-- Akira -->
+            <a href="https://fil-m.github.io/akira-mental-math/" target="_blank" class="project-card-link">
             <div class="project-card" style="--accent-card:#f59e0b;">
                 <div class="project-cat">📚 Освітні інструменти</div>
                 <h3>Akira Mental Math</h3>
@@ -563,12 +598,13 @@
                     <span class="project-tech">JS</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/Fil-m/akira-mental-math" target="_blank">🐙 GitHub</a>
-                    <a href="https://fil-m.github.io/akira-mental-math/" target="_blank">🌐 Сайт</a>
+                    <a href="https://github.com/Fil-m/akira-mental-math" target="_blank" onclick="event.stopPropagation()">🐙 GitHub</a>
                 </div>
             </div>
+            </a>
 
             <!-- BitSprite -->
+            <a href="https://github.com/Fil-m/bitsprite" target="_blank" class="project-card-link">
             <div class="project-card" style="--accent-card:#ec4899;">
                 <div class="project-cat">🎮 Ігри</div>
                 <h3>BitSprite</h3>
@@ -578,27 +614,25 @@
                     <span class="project-tech">Canvas</span>
                     <span class="project-tech">HTML</span>
                 </div>
-                <div class="project-links">
-                    <a href="https://github.com/Fil-m/bitsprite" target="_blank">🐙 GitHub</a>
-                </div>
             </div>
+            </a>
 
             <!-- Xtlan -->
+            <a href="https://github.com/Fil-m/xtlan" target="_blank" class="project-card-link">
             <div class="project-card" style="--accent-card:#06b6d4;">
                 <div class="project-cat">🎮 Ігри</div>
-                <h3>Xtlan</h3>
+                <h3>Xtlan (Без імені)</h3>
                 <p>Vue-based гра. Інтерактивний ігровий світ з багаторівневою логікою. Прототип нової механіки.</p>
                 <div class="project-techs">
                     <span class="project-tech">Vue</span>
                     <span class="project-tech">JS</span>
                     <span class="project-tech">CSS</span>
                 </div>
-                <div class="project-links">
-                    <a href="https://github.com/Fil-m/xtlan" target="_blank">🐙 GitHub</a>
-                </div>
             </div>
+            </a>
 
             <!-- NeuroMarker Suite -->
+            <a href="https://github.com/Fil-m/neuromarker-suite" target="_blank" class="project-card-link">
             <div class="project-card" style="--accent-card:#7c3aed;">
                 <div class="project-cat">🧠 Нейропсихологія</div>
                 <h3>NeuroMarker Suite</h3>
@@ -608,12 +642,11 @@
                     <span class="project-tech">JS</span>
                     <span class="project-tech">HTML</span>
                 </div>
-                <div class="project-links">
-                    <a href="https://github.com/Fil-m/neuromarker-suite" target="_blank">🐙 GitHub</a>
-                </div>
             </div>
+            </a>
 
             <!-- Aim Lab Scientist -->
+            <a href="https://fil-m.github.io/aim-lab-scientist/" target="_blank" class="project-card-link">
             <div class="project-card" style="--accent-card:#8b5cf6;">
                 <div class="project-cat">🔬 Дослідження</div>
                 <h3>Aim Lab Scientist</h3>
@@ -624,28 +657,15 @@
                     <span class="project-tech">HTML</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/Fil-m/aim-lab-scientist" target="_blank">🐙 GitHub</a>
-                    <a href="https://fil-m.github.io/aim-lab-scientist/" target="_blank">🌐 Сайт</a>
+                    <a href="https://github.com/Fil-m/aim-lab-scientist" target="_blank" onclick="event.stopPropagation()">🐙 GitHub</a>
                 </div>
             </div>
-
-            <!-- Дія до мрії -->
-            <div class="project-card" style="--accent-card:#f97316;">
-                <div class="project-cat">🌱 Соціальний проєкт</div>
-                <h3>Дія до мрії</h3>
-                <p>Безкоштовна ініціатива: напарник для старту. Допомагаю перейти від мрії до першої реальної дії через маленькі експерименти. 3 місця, без вікових обмежень.</p>
-                <div class="project-techs">
-                    <span class="project-tech">HTML</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/Fil-m/diya-do-mriyi" target="_blank">🐙 GitHub</a>
-                    <a href="https://fil-m.github.io/diya-do-mriyi/" target="_blank">🌐 Сайт</a>
-                </div>
-            </div>
+            </a>
 
             <!-- Hermes SKVA -->
+            <a href="https://github.com/Fil-m/hermes-skva" target="_blank" class="project-card-link">
             <div class="project-card" style="--accent-card:#10b981;">
-                <div class="project-cat">🤖 AI & Агенти</div>
+                <div class="project-cat">🤖 AI та Агенти</div>
                 <h3>Hermes SKVA</h3>
                 <p>Multi-agent production system. Розподілена система AI-агентів для автоматизації складних робочих процесів. Оркестрація, деплой, моніторинг.</p>
                 <div class="project-techs">
@@ -653,14 +673,13 @@
                     <span class="project-tech">Shell</span>
                     <span class="project-tech">Hermes</span>
                 </div>
-                <div class="project-links">
-                    <a href="https://github.com/Fil-m/hermes-skva" target="_blank">🐙 GitHub</a>
-                </div>
             </div>
+            </a>
 
             <!-- Vlog Automator -->
+            <a href="https://github.com/Fil-m/vlog-automator" target="_blank" class="project-card-link">
             <div class="project-card" style="--accent-card:#06b6d4;">
-                <div class="project-cat">🎬 Відео & AI</div>
+                <div class="project-cat">🎬 Відео та AI</div>
                 <h3>Vlog Automator</h3>
                 <p>AI-автоматизація монтажу відео. Транскрипція (Whisper), візуальний аналіз кадрів (Moondream), AI-сценарій, експорт у DaVinci Resolve FCPXML.</p>
                 <div class="project-techs">
@@ -668,12 +687,11 @@
                     <span class="project-tech">Whisper</span>
                     <span class="project-tech">Ollama</span>
                 </div>
-                <div class="project-links">
-                    <a href="https://github.com/Fil-m/vlog-automator" target="_blank">🐙 GitHub</a>
-                </div>
             </div>
+            </a>
 
             <!-- Art Picnic -->
+            <a href="https://github.com/Fil-m/art-picnic" target="_blank" class="project-card-link">
             <div class="project-card" style="--accent-card:#f5a623;">
                 <div class="project-cat">🎨 Творчість</div>
                 <h3>Art Picnic</h3>
@@ -682,12 +700,11 @@
                     <span class="project-tech">HTML</span>
                     <span class="project-tech">CSS</span>
                 </div>
-                <div class="project-links">
-                    <a href="https://github.com/Fil-m/art-picnic" target="_blank">🐙 GitHub</a>
-                </div>
             </div>
+            </a>
 
             <!-- EME Platform -->
+            <a href="https://github.com/Fil-m/eme" target="_blank" class="project-card-link">
             <div class="project-card" style="--accent-card:#6366f1;">
                 <div class="project-cat">⚙️ Платформа</div>
                 <h3>EME</h3>
@@ -698,12 +715,11 @@
                     <span class="project-tech">Django</span>
                     <span class="project-tech">JS</span>
                 </div>
-                <div class="project-links">
-                    <a href="https://github.com/Fil-m/eme" target="_blank">🐙 GitHub</a>
-                </div>
             </div>
+            </a>
 
             <!-- Mine Avatar Hub -->
+            <a href="https://github.com/Fil-m/mine-avatar-hub" target="_blank" class="project-card-link">
             <div class="project-card" style="--accent-card:#22c55e;">
                 <div class="project-cat">🎮 Minecraft</div>
                 <h3>Mine Avatar Hub</h3>
@@ -713,27 +729,25 @@
                     <span class="project-tech">Python</span>
                     <span class="project-tech">HTML</span>
                 </div>
-                <div class="project-links">
-                    <a href="https://github.com/Fil-m/mine-avatar-hub" target="_blank">🐙 GitHub</a>
-                </div>
             </div>
+            </a>
 
             <!-- PythonAnywhere Game -->
+            <a href="https://yelyzavetaandriievska.pythonanywhere.com/" target="_blank" class="project-card-link">
             <div class="project-card" style="--accent-card:#3b82f6;">
                 <div class="project-cat">🎮 Django Game</div>
-                <h3>Game Project (PythonAnywhere)</h3>
+                <h3>Game Project</h3>
                 <p>Django-гра, задеплоєна на PythonAnywhere. Реєстрація, ігрова логіка, веб-інтерфейс. Демонструє повний цикл: Django → деплой.</p>
                 <div class="project-techs">
                     <span class="project-tech">Django</span>
                     <span class="project-tech">Python</span>
                     <span class="project-tech">HTML</span>
                 </div>
-                <div class="project-links">
-                    <a href="https://yelyzavetaandriievska.pythonanywhere.com/" target="_blank">🌐 Сайт</a>
-                </div>
             </div>
+            </a>
 
             <!-- SMM Automation -->
+            <a href="https://github.com/Fil-m/smm-automation" target="_blank" class="project-card-link">
             <div class="project-card" style="--accent-card:#f59e0b;">
                 <div class="project-cat">🤖 AI-Автоматизація</div>
                 <h3>SMM Automation</h3>
@@ -743,12 +757,11 @@
                     <span class="project-tech">Flask</span>
                     <span class="project-tech">Groq</span>
                 </div>
-                <div class="project-links">
-                    <a href="https://github.com/Fil-m/smm-automation" target="_blank">🐙 GitHub</a>
-                </div>
             </div>
+            </a>
 
             <!-- Hermonoid -->
+            <a href="https://github.com/Fil-m/hermonoid" target="_blank" class="project-card-link">
             <div class="project-card" style="--accent-card:#7c3aed;">
                 <div class="project-cat">📱 Мобільне</div>
                 <h3>Hermonoid</h3>
@@ -758,10 +771,8 @@
                     <span class="project-tech">Java</span>
                     <span class="project-tech">HTML</span>
                 </div>
-                <div class="project-links">
-                    <a href="https://github.com/Fil-m/hermonoid" target="_blank">🐙 GitHub</a>
-                </div>
             </div>
+            </a>
 
         </div>
     </div>
@@ -809,11 +820,15 @@
             <div style="display:flex;flex-direction:column;gap:20px;">
                 <div class="about-card">
                     <h3>📍 Локація</h3>
-                    <p>Карлсруе, Німеччина<br>Київ, Україна</p>
+                    <p>Карлсруе, Німеччина · Київ, Україна</p>
                 </div>
                 <div class="about-card">
                     <h3>💬 Мови</h3>
                     <p>Українська (рідна) · Російська (вільно) · Німецька (B1+) · Англійська (B2)</p>
+                </div>
+                <div class="about-card">
+                    <h3>🏔️ Улюблене</h3>
+                    <p>Невеликі походи, спорт на свіжому повітрі, прогулянки в лісі</p>
                 </div>
             </div>
         </div>
@@ -824,7 +839,7 @@
 <footer>
     <div class="container">
         <p>© 2026 Тарас Москаленко. Зроблено з ❤️ в Карлсруе.</p>
-        <p style="margin-top:4px;font-size:0.75rem;">Build > Plan. People > Technology.</p>
+        <p style="margin-top:4px;font-size:0.75rem;">Build > Plan. Люди > Технології.</p>
     </div>
 </footer>
 
