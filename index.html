@@ -17,10 +17,6 @@
             --surface:#ffffff;
             --rose:#f43f5e;
             --sky:#0ea5e9;
-            --mint:#22c55e;
-            --sun:#eab308;
-            --purple:#a855f7;
-            --teal:#06b6d4;
             --text:#0f172a;
             --text2:#475569;
             --text3:#94a3b8;
@@ -40,7 +36,6 @@
         }
         .container{max-width:1100px;margin:0 auto;padding:0 28px;}
 
-        /* ─── NAV ─── */
         nav{
             position:fixed;top:0;left:0;right:0;z-index:100;
             padding:16px 0;
@@ -63,20 +58,9 @@
         }
         .nav-links a:hover{color:var(--rose);background:rgba(244,63,94,0.06);}
 
-        /* ─── HERO ─── */
         .hero{
             min-height:100vh;display:flex;align-items:center;
             padding:120px 0 80px;position:relative;overflow:hidden;
-        }
-        .hero::before{
-            content:'';position:absolute;top:-30%;right:-10%;width:60%;height:120%;
-            background:radial-gradient(ellipse, rgba(244,63,94,0.05) 0%, transparent 70%);
-            pointer-events:none;
-        }
-        .hero::after{
-            content:'';position:absolute;bottom:-20%;left:-5%;width:40%;height:80%;
-            background:radial-gradient(ellipse, rgba(14,165,233,0.04) 0%, transparent 70%);
-            pointer-events:none;
         }
         .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1;}
         .hero-badge{
@@ -101,7 +85,6 @@
             padding:5px 14px;border-radius:20px;
             background:var(--surface);color:var(--text2);
             box-shadow:var(--shadow);
-            transition:all 0.2s;
         }
         .hero-tag:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover);}
         .hero-cta{display:flex;gap:10px;flex-wrap:wrap;}
@@ -116,41 +99,16 @@
             box-shadow:0 4px 14px rgba(244,63,94,0.25);
         }
         .btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(244,63,94,0.35);}
-        .btn-outline{
-            background:var(--surface);color:var(--text);
-            box-shadow:var(--shadow);
-        }
-        .btn-outline:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover);}
 
         .hero-visual{
             position:relative;display:flex;align-items:center;justify-content:center;
         }
-        .hero-canvas-wrap{
-            width:300px;height:300px;border-radius:50%;
-            background:linear-gradient(135deg, var(--rose), var(--purple), var(--sky));
-            display:flex;align-items:center;justify-content:center;
-            box-shadow:0 8px 40px rgba(244,63,94,0.12);
-            position:relative;
-        }
-        .hero-canvas-wrap canvas{
-            width:286px;height:286px;border-radius:50%;
+        #particleCanvas{
+            width:100%;max-width:420px;height:auto;aspect-ratio:1/1;
+            border-radius:var(--radius);
+            box-shadow:var(--shadow);
             display:block;
-        }
-        .hero-dots{
-            position:absolute;width:100%;height:100%;top:0;left:0;
-            pointer-events:none;
-        }
-        .hero-dot{
-            position:absolute;width:10px;height:10px;border-radius:50%;
-            opacity:0.4;animation:float 6s ease-in-out infinite;
-        }
-        .hero-dot:nth-child(1){background:var(--rose);top:6%;left:55%;width:14px;height:14px;}
-        .hero-dot:nth-child(2){background:var(--teal);top:74%;left:6%;animation-delay:-1.5s;}
-        .hero-dot:nth-child(3){background:var(--sun);top:20%;right:6%;animation-delay:-3s;}
-        .hero-dot:nth-child(4){background:var(--mint);bottom:14%;right:20%;animation-delay:-4.5s;}
-        @keyframes float{
-            0%,100%{transform:translateY(0)}
-            50%{transform:translateY(-12px)}
+            background:#fff;
         }
 
         section{padding:90px 0;position:relative;}
@@ -244,13 +202,11 @@
             .hero-sub{margin-left:auto;margin-right:auto;}
             .hero-cta,.hero-tags{justify-content:center;}
             .hero-visual{order:-1;}
-            .hero-canvas-wrap{width:200px;height:200px;}
-            .hero-canvas-wrap canvas{width:186px;height:186px;}
+            #particleCanvas{max-width:300px;margin:0 auto;}
             .about-grid,.contact-grid{grid-template-columns:1fr;}
             .projects-grid{grid-template-columns:1fr;}
             .section-title{font-size:1.6rem;}
             .nav-links{display:none;}
-            .hero::before,.hero::after{display:none;}
         }
         @media(max-width:480px){
             .hero h1{font-size:1.6rem;}
@@ -275,7 +231,6 @@
     </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero" id="home">
     <div class="container">
         <div class="hero-grid">
@@ -302,47 +257,25 @@
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="hero-canvas-wrap" id="avatarWrap">
-                    <canvas id="particleCanvas" width="572" height="572"></canvas>
-                </div>
-                <div class="hero-dots">
-                    <div class="hero-dot"></div>
-                    <div class="hero-dot"></div>
-                    <div class="hero-dot"></div>
-                    <div class="hero-dot"></div>
-                </div>
+                <canvas id="particleCanvas" width="800" height="800"></canvas>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about" style="background:var(--bg2);">
     <div class="container">
         <div class="section-label">✧ Про мене</div>
         <h2 class="section-title">Людина, яка об'єднує світи</h2>
         <div class="about-grid">
-            <div class="about-card">
-                <h3>🌱 Моє зараз</h3>
-                <p>Найбільше я проявляю себе в проєкті <strong>«Дія до мрії»</strong>. Бути напарником для людини, яка хоче зробити перший крок до своєї мрії. Без рамок, без вікових обмежень, через маленькі реальні експерименти.</p>
-            </div>
-            <div class="about-card">
-                <h3>🎯 Місія</h3>
-                <p>Допомагати людям розкривати потенціал через творчість і технології. Найкращі рішення народжуються на перетині дисциплін.</p>
-            </div>
-            <div class="about-card">
-                <h3>📚 Освіта та фокус</h3>
-                <p>Психологія, фізіологія ВНД, хімія мозку, нейрональна парадигма, біхевіоризм. Анімацію розповсюджую як інструмент розвитку дітей.</p>
-            </div>
-            <div class="about-card">
-                <h3>🌍 Спільноти</h3>
-                <p>Координатор 3D-ферми <strong>Стіна</strong>, засновник <strong>Infinity Braves</strong>, ініціатор <strong>«Дія до мрії»</strong>. Люблю походи, спорт на свіжому повітрі 🏔️</p>
-            </div>
+            <div class="about-card"><h3>🌱 Моє зараз</h3><p>Найбільше я проявляю себе в проєкті <strong>«Дія до мрії»</strong>. Бути напарником для людини, яка хоче зробити перший крок до своєї мрії. Без рамок, без вікових обмежень, через маленькі реальні експерименти.</p></div>
+            <div class="about-card"><h3>🎯 Місія</h3><p>Допомагати людям розкривати потенціал через творчість і технології. Найкращі рішення народжуються на перетині дисциплін.</p></div>
+            <div class="about-card"><h3>📚 Освіта та фокус</h3><p>Психологія, фізіологія ВНД, хімія мозку, нейрональна парадигма, біхевіоризм. Анімацію розповсюджую як інструмент розвитку дітей.</p></div>
+            <div class="about-card"><h3>🌍 Спільноти</h3><p>Координатор 3D-ферми <strong>Стіна</strong>, засновник <strong>Infinity Braves</strong>, ініціатор <strong>«Дія до мрії»</strong>. Люблю походи, спорт на свіжому повітрі 🏔️</p></div>
         </div>
     </div>
 </section>
 
-<!-- FACETS -->
 <section id="facets">
     <div class="container">
         <div class="section-label">✦ Грані</div>
@@ -355,149 +288,36 @@
             <div class="facet-card"><div class="facet-icon">🤖</div><h3>AI та автоматизація</h3><p>Multi-agent системи, LLM-пайплайни, Telegram боти. AI як інструмент.</p></div>
             <div class="facet-card"><div class="facet-icon">🧠</div><h3>Психологія</h3><p>Фізіологія ВНД, нейрональна парадигма, біхевіоризм. Скринінг, дослідження.</p></div>
             <div class="facet-card"><div class="facet-icon">🎵</div><h3>Музика</h3><p>Аматорські треки, спів. <a href="https://soundcloud.com/user-482406102" target="_blank" style="color:var(--rose);text-decoration:none;">SoundCloud →</a></p></div>
-            <div class="facet-card"><div class="facet-icon">🎨</div><h3>Арт та імпровізація</h3><p>Колажі, малювання, арт зі сміттям. Спонтанні фільми з друзями. Найкраще без сценарію.</p></div>
+            <div class="facet-card"><div class="facet-icon">🎨</div><h3>Арт та імпровізація</h3><p>Колажі, малювання, арт зі сміттям. Спонтанні фільми з друзями.</p></div>
             <div class="facet-card"><div class="facet-icon">🏔️</div><h3>Активність</h3><p>Походи, спорт на свіжому повітрі, прогулянки в лісі.</p></div>
         </div>
     </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects" style="background:var(--bg2);">
     <div class="container">
         <div class="section-label">✧ Проєкти</div>
         <h2 class="section-title">Проєкти</h2>
         <div class="projects-grid">
-
-            <a href="https://fil-m.github.io/diya-do-mriyi/" target="_blank" class="project-card-link">
-            <div class="project-card" style="--accent-card:#f43f5e;">
-                <div class="project-cat">🌱 Сенс цього всього</div>
-                <h3>★ Дія до мрії</h3>
-                <p>Мій центральний проєкт. Напарник для старту: від мрії до першої реальної дії. Безкоштовно, без віку.</p>
-                <div class="project-links"><a href="https://github.com/Fil-m/diya-do-mriyi" target="_blank" onclick="event.stopPropagation()">🐙 GitHub</a></div>
-            </div></a>
-
-            <a href="https://fil-m.github.io/animation_mentors/" target="_blank" class="project-card-link">
-            <div class="project-card" style="--accent-card:#a855f7;">
-                <div class="project-cat">🎬 Анімація та розвиток</div>
-                <h3>Animation Mentors</h3>
-                <p>Навчаю дорослих робити мультики з дітьми. ADHD-friendly, фестивалі (Annecy, Zlín).</p>
-                <div class="project-techs"><span class="project-tech">HTML</span><span class="project-tech">CSS</span><span class="project-tech">JS</span></div>
-                <div class="project-links"><a href="https://github.com/Fil-m/animation_mentors" target="_blank" onclick="event.stopPropagation()">🐙 GitHub</a></div>
-            </div></a>
-
-            <a href="https://fil-m.github.io/stina-3d/" target="_blank" class="project-card-link">
-            <div class="project-card" style="--accent-card:#22c55e;">
-                <div class="project-cat">🖨️ 3D-Друк та волонтерство</div>
-                <h3>Стіна 3D друкарня</h3>
-                <p>Волонтерська 3D-ферма в Карлсруе. Медичні компоненти, протези. 8 принтерів.</p>
-                <div class="project-techs"><span class="project-tech">HTML</span><span class="project-tech">Klipper</span><span class="project-tech">FreeCAD</span></div>
-                <div class="project-links"><a href="https://github.com/Fil-m/stina-3d" target="_blank" onclick="event.stopPropagation()">🐙 GitHub</a></div>
-            </div></a>
-
-            <a href="https://github.com/Fil-m/recoil-game" target="_blank" class="project-card-link">
-            <div class="project-card" style="--accent-card:#f43f5e;">
-                <div class="project-cat">🎮 Ігри</div>
-                <h3>Recoil Gun</h3>
-                <p>Браузерний бойовик з фізикою віддачі. Canvas, фізика з нуля.</p>
-                <div class="project-techs"><span class="project-tech">JavaScript</span><span class="project-tech">Canvas</span></div>
-            </div></a>
-
-            <a href="https://github.com/Fil-m/--braves" target="_blank" class="project-card-link">
-            <div class="project-card" style="--accent-card:#a855f7;">
-                <div class="project-cat">🧠 Спільнота</div>
-                <h3>Infinity Braves</h3>
-                <p>Група підтримки нейровідмінних дорослих (РАС, СДВГ) в Карлсруе.</p>
-                <div class="project-techs"><span class="project-tech">Django</span><span class="project-tech">Python</span></div>
-            </div></a>
-
-            <a href="https://github.com/Fil-m/habitat-os-test" target="_blank" class="project-card-link">
-            <div class="project-card" style="--accent-card:#0ea5e9;">
-                <div class="project-cat">🎮 Платформа</div>
-                <h3>Habitat OS</h3>
-                <p>Мобільна ігрова ОС. Match-3, магазин скінів, модульна система.</p>
-                <div class="project-techs"><span class="project-tech">HTML</span><span class="project-tech">JS</span><span class="project-tech">Python</span></div>
-                <div class="project-links"><a href="https://github.com/Fil-m/habitat-os-workshop" target="_blank" onclick="event.stopPropagation()">🐙 Workshop</a></div>
-            </div></a>
-
-            <a href="https://fil-m.github.io/akira-mental-math/" target="_blank" class="project-card-link">
-            <div class="project-card" style="--accent-card:#eab308;">
-                <div class="project-cat">📚 Освіта</div>
-                <h3>Akira Mental Math</h3>
-                <p>Генератор вправ для ментальної арифметики на абакусі. Концентрація.</p>
-                <div class="project-techs"><span class="project-tech">HTML</span><span class="project-tech">JS</span></div>
-                <div class="project-links"><a href="https://github.com/Fil-m/akira-mental-math" target="_blank" onclick="event.stopPropagation()">🐙 GitHub</a></div>
-            </div></a>
-
-            <a href="https://github.com/Fil-m/bitsprite" target="_blank" class="project-card-link">
-            <div class="project-card" style="--accent-card:#f43f5e;">
-                <div class="project-cat">🎮 Ігри</div>
-                <h3>BitSprite</h3>
-                <p>Платформер / sandbox. Піксельні світи, квести. Canvas + JS.</p>
-                <div class="project-techs"><span class="project-tech">JavaScript</span><span class="project-tech">Canvas</span></div>
-            </div></a>
-
-            <a href="https://github.com/Fil-m/neuromarker-suite" target="_blank" class="project-card-link">
-            <div class="project-card" style="--accent-card:#a855f7;">
-                <div class="project-cat">🧠 Нейропсихологія</div>
-                <h3>NeuroMarker Suite</h3>
-                <p>Інструменти скринінгу. Когнітивні тести, аналіз.</p>
-                <div class="project-techs"><span class="project-tech">Python</span><span class="project-tech">JS</span></div>
-            </div></a>
-
-            <a href="https://fil-m.github.io/aim-lab-scientist/" target="_blank" class="project-card-link">
-            <div class="project-card" style="--accent-card:#0ea5e9;">
-                <div class="project-cat">🔬 Дослідження</div>
-                <h3>Aim Lab Scientist</h3>
-                <p>NeuroAim Research Suite. Увага, сенсомоторні реакції.</p>
-                <div class="project-techs"><span class="project-tech">JavaScript</span><span class="project-tech">Chart.js</span></div>
-                <div class="project-links"><a href="https://github.com/Fil-m/aim-lab-scientist" target="_blank" onclick="event.stopPropagation()">🐙 GitHub</a></div>
-            </div></a>
-
-            <a href="https://github.com/Fil-m/hermes-skva" target="_blank" class="project-card-link">
-            <div class="project-card" style="--accent-card:#22c55e;">
-                <div class="project-cat">🤖 AI та агенти</div>
-                <h3>Hermes SKVA</h3>
-                <p>Multi-agent production system. Розподілені AI-агенти.</p>
-                <div class="project-techs"><span class="project-tech">Python</span><span class="project-tech">Hermes</span></div>
-            </div></a>
-
-            <a href="https://github.com/Fil-m/vlog-automator" target="_blank" class="project-card-link">
-            <div class="project-card" style="--accent-card:#06b6d4;">
-                <div class="project-cat">🎬 Відео та AI</div>
-                <h3>Vlog Automator</h3>
-                <p>AI-монтаж відео. Whisper, аналіз, DaVinci Resolve.</p>
-                <div class="project-techs"><span class="project-tech">Python</span><span class="project-tech">Whisper</span></div>
-            </div></a>
-
-            <a href="https://github.com/Fil-m/art-picnic" target="_blank" class="project-card-link">
-            <div class="project-card" style="--accent-card:#eab308;">
-                <div class="project-cat">🎨 Творчість</div>
-                <h3>Art Picnic</h3>
-                <p>Щомісячний арт-пікнік: стопмоушен просто неба.</p>
-                <div class="project-techs"><span class="project-tech">HTML</span><span class="project-tech">CSS</span></div>
-            </div></a>
-
-            <a href="https://github.com/Fil-m/eme" target="_blank" class="project-card-link">
-            <div class="project-card" style="--accent-card:#a855f7;">
-                <div class="project-cat">⚙️ Платформа</div>
-                <h3>EME</h3>
-                <p>Модульна екосистема. Vue + Django, Mesh, локальний AI.</p>
-                <div class="project-techs"><span class="project-tech">Python</span><span class="project-tech">Vue</span><span class="project-tech">Django</span></div>
-            </div></a>
-
-            <a href="https://yelyzavetaandriievska.pythonanywhere.com/" target="_blank" class="project-card-link">
-            <div class="project-card" style="--accent-card:#0ea5e9;">
-                <div class="project-cat">🎮 Django Game</div>
-                <h3>Game Project</h3>
-                <p>Django-гра на PythonAnywhere. Django → деплой.</p>
-                <div class="project-techs"><span class="project-tech">Django</span><span class="project-tech">Python</span></div>
-            </div></a>
-
+            <a href="https://fil-m.github.io/diya-do-mriyi/" target="_blank" class="project-card-link"><div class="project-card" style="--accent-card:#f43f5e;"><div class="project-cat">🌱 Сенс цього всього</div><h3>★ Дія до мрії</h3><p>Мій центральний проєкт. Напарник для старту: від мрії до першої реальної дії. Безкоштовно, без віку.</p><div class="project-links"><a href="https://github.com/Fil-m/diya-do-mriyi" target="_blank" onclick="event.stopPropagation()">🐙 GitHub</a></div></div></a>
+            <a href="https://fil-m.github.io/animation_mentors/" target="_blank" class="project-card-link"><div class="project-card" style="--accent-card:#a855f7;"><div class="project-cat">🎬 Анімація та розвиток</div><h3>Animation Mentors</h3><p>Навчаю дорослих робити мультики з дітьми. ADHD-friendly, фестивалі (Annecy, Zlín).</p><div class="project-techs"><span class="project-tech">HTML</span><span class="project-tech">CSS</span><span class="project-tech">JS</span></div><div class="project-links"><a href="https://github.com/Fil-m/animation_mentors" target="_blank" onclick="event.stopPropagation()">🐙 GitHub</a></div></div></a>
+            <a href="https://fil-m.github.io/stina-3d/" target="_blank" class="project-card-link"><div class="project-card" style="--accent-card:#22c55e;"><div class="project-cat">🖨️ 3D-Друк та волонтерство</div><h3>Стіна 3D друкарня</h3><p>Волонтерська 3D-ферма в Карлсруе. Медичні компоненти, протези. 8 принтерів.</p><div class="project-techs"><span class="project-tech">HTML</span><span class="project-tech">Klipper</span><span class="project-tech">FreeCAD</span></div><div class="project-links"><a href="https://github.com/Fil-m/stina-3d" target="_blank" onclick="event.stopPropagation()">🐙 GitHub</a></div></div></a>
+            <a href="https://github.com/Fil-m/recoil-game" target="_blank" class="project-card-link"><div class="project-card" style="--accent-card:#f43f5e;"><div class="project-cat">🎮 Ігри</div><h3>Recoil Gun</h3><p>Браузерний бойовик з фізикою віддачі. Canvas, фізика з нуля.</p><div class="project-techs"><span class="project-tech">JavaScript</span><span class="project-tech">Canvas</span></div></div></a>
+            <a href="https://github.com/Fil-m/--braves" target="_blank" class="project-card-link"><div class="project-card" style="--accent-card:#a855f7;"><div class="project-cat">🧠 Спільнота</div><h3>Infinity Braves</h3><p>Група підтримки нейровідмінних дорослих (РАС, СДВГ) в Карлсруе.</p><div class="project-techs"><span class="project-tech">Django</span><span class="project-tech">Python</span></div></div></a>
+            <a href="https://github.com/Fil-m/habitat-os-test" target="_blank" class="project-card-link"><div class="project-card" style="--accent-card:#0ea5e9;"><div class="project-cat">🎮 Платформа</div><h3>Habitat OS</h3><p>Мобільна ігрова ОС. Match-3, магазин скінів, модульна система.</p><div class="project-techs"><span class="project-tech">HTML</span><span class="project-tech">JS</span><span class="project-tech">Python</span></div><div class="project-links"><a href="https://github.com/Fil-m/habitat-os-workshop" target="_blank" onclick="event.stopPropagation()">🐙 Workshop</a></div></div></a>
+            <a href="https://fil-m.github.io/akira-mental-math/" target="_blank" class="project-card-link"><div class="project-card" style="--accent-card:#eab308;"><div class="project-cat">📚 Освіта</div><h3>Akira Mental Math</h3><p>Генератор вправ для ментальної арифметики на абакусі.</p><div class="project-techs"><span class="project-tech">HTML</span><span class="project-tech">JS</span></div><div class="project-links"><a href="https://github.com/Fil-m/akira-mental-math" target="_blank" onclick="event.stopPropagation()">🐙 GitHub</a></div></div></a>
+            <a href="https://github.com/Fil-m/bitsprite" target="_blank" class="project-card-link"><div class="project-card" style="--accent-card:#f43f5e;"><div class="project-cat">🎮 Ігри</div><h3>BitSprite</h3><p>Платформер / sandbox. Піксельні світи, квести.</p><div class="project-techs"><span class="project-tech">JavaScript</span><span class="project-tech">Canvas</span></div></div></a>
+            <a href="https://github.com/Fil-m/neuromarker-suite" target="_blank" class="project-card-link"><div class="project-card" style="--accent-card:#a855f7;"><div class="project-cat">🧠 Нейропсихологія</div><h3>NeuroMarker Suite</h3><p>Інструменти скринінгу. Когнітивні тести, аналіз.</p><div class="project-techs"><span class="project-tech">Python</span><span class="project-tech">JS</span></div></div></a>
+            <a href="https://fil-m.github.io/aim-lab-scientist/" target="_blank" class="project-card-link"><div class="project-card" style="--accent-card:#0ea5e9;"><div class="project-cat">🔬 Дослідження</div><h3>Aim Lab Scientist</h3><p>NeuroAim Research Suite. Увага, сенсомоторні реакції.</p><div class="project-techs"><span class="project-tech">JavaScript</span><span class="project-tech">Chart.js</span></div><div class="project-links"><a href="https://github.com/Fil-m/aim-lab-scientist" target="_blank" onclick="event.stopPropagation()">🐙 GitHub</a></div></div></a>
+            <a href="https://github.com/Fil-m/hermes-skva" target="_blank" class="project-card-link"><div class="project-card" style="--accent-card:#22c55e;"><div class="project-cat">🤖 AI та агенти</div><h3>Hermes SKVA</h3><p>Multi-agent production system. Розподілені AI-агенти.</p><div class="project-techs"><span class="project-tech">Python</span><span class="project-tech">Hermes</span></div></div></a>
+            <a href="https://github.com/Fil-m/vlog-automator" target="_blank" class="project-card-link"><div class="project-card" style="--accent-card:#06b6d4;"><div class="project-cat">🎬 Відео та AI</div><h3>Vlog Automator</h3><p>AI-монтаж відео. Whisper, аналіз, DaVinci Resolve.</p><div class="project-techs"><span class="project-tech">Python</span><span class="project-tech">Whisper</span></div></div></a>
+            <a href="https://github.com/Fil-m/art-picnic" target="_blank" class="project-card-link"><div class="project-card" style="--accent-card:#eab308;"><div class="project-cat">🎨 Творчість</div><h3>Art Picnic</h3><p>Щомісячний арт-пікнік: стопмоушен просто неба.</p><div class="project-techs"><span class="project-tech">HTML</span><span class="project-tech">CSS</span></div></div></a>
+            <a href="https://github.com/Fil-m/eme" target="_blank" class="project-card-link"><div class="project-card" style="--accent-card:#a855f7;"><div class="project-cat">⚙️ Платформа</div><h3>EME</h3><p>Модульна екосистема. Vue + Django, Mesh, локальний AI.</p><div class="project-techs"><span class="project-tech">Python</span><span class="project-tech">Vue</span><span class="project-tech">Django</span></div></div></a>
+            <a href="https://yelyzavetaandriievska.pythonanywhere.com/" target="_blank" class="project-card-link"><div class="project-card" style="--accent-card:#0ea5e9;"><div class="project-cat">🎮 Django Game</div><h3>Game Project</h3><p>Django-гра на PythonAnywhere. Django → деплой.</p><div class="project-techs"><span class="project-tech">Django</span><span class="project-tech">Python</span></div></div></a>
         </div>
     </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
     <div class="container">
         <div class="section-label">✧ Контакти</div>
@@ -525,175 +345,135 @@
 </footer>
 
 <script>
-// ─── PARTICLE FACE AVATAR ───
+// ─── PARTICLE SYSTEM ───
 const canvas = document.getElementById('particleCanvas');
 const ctx = canvas.getContext('2d');
 const W = canvas.width, H = canvas.height;
 const CX = W/2, CY = H/2;
-const RADIUS = W/2 - 6;
+
+// Load photo for background reference
+const img = new Image();
+img.src = 'me.jpg';
 
 let particles = [];
 const PHASE_CHAOS = 0, PHASE_FORMING = 1, PHASE_FORMED = 2, PHASE_SCATTER = 3;
 let phase = PHASE_CHAOS;
 let phaseTimer = 0;
-const FORM_DURATION = 180;  // 3s at 60fps
-const HOLD_DURATION = 300;  // 5s
-const SCATTER_DURATION = 120; // 2s
-const CHAOS_DURATION = 480; // 8s
+const FORM_DURATION = 180;
+const HOLD_DURATION = 300;
+const SCATTER_DURATION = 120;
+const CHAOS_DURATION = 480;
 
-// Build particles from face data
 function initParticles() {
     const all = [...FACEPOINTS.contour, ...FACEPOINTS.fill];
+    const scale = 0.85;
     particles = all.map(p => {
-        // Target position in canvas coordinates (centered, scaled to radius)
-        const tx = CX + (p.x - 0.5) * RADIUS * 1.8;
-        const ty = CY + (p.y - 0.5) * RADIUS * 1.8;
-        // Random start within circle
-        const angle = Math.random() * Math.PI * 2;
-        const r = Math.random() * RADIUS * 0.9;
+        const tx = CX + (p.x - 0.5) * W * scale;
+        const ty = CY + (p.y - 0.5) * H * scale;
         return {
-            x: CX + Math.cos(angle) * r,
-            y: CY + Math.sin(angle) * r,
-            tx, ty,
-            sx: 0, sy: 0, // scatter home
-            vx: (Math.random() - 0.5) * 2,
-            vy: (Math.random() - 0.5) * 2,
-            size: p.fill ? 1.2 : 1.5 + Math.random() * 0.8,
-            alpha: 0.3 + Math.random() * 0.4,
+            x: Math.random() * W, y: Math.random() * H,
+            tx, ty, sx: 0, sy: 0,
+            vx: (Math.random() - 0.5) * 1.5,
+            vy: (Math.random() - 0.5) * 1.5,
+            size: p.fill ? 1.5 : 2 + Math.random() * 1.5,
+            alpha: 0.4 + Math.random() * 0.4,
             fill: !!p.fill
         };
     });
-    // Set scatter homes
     particles.forEach(p => {
-        const a = Math.random() * Math.PI * 2;
-        const r = Math.random() * RADIUS * 0.85;
-        p.sx = CX + Math.cos(a) * r;
-        p.sy = CY + Math.sin(a) * r;
+        p.sx = Math.random() * W;
+        p.sy = Math.random() * H;
     });
 }
 
 function lerp(a, b, t) { return a + (b - a) * t; }
 
-function updateParticles() {
+function update() {
     phaseTimer++;
-    
     if (phase === PHASE_CHAOS && phaseTimer > CHAOS_DURATION) {
-        phase = PHASE_FORMING;
-        phaseTimer = 0;
-        // Store current positions as scatter homes
+        phase = PHASE_FORMING; phaseTimer = 0;
         particles.forEach(p => { p.sx = p.x; p.sy = p.y; });
-    }
-    else if (phase === PHASE_FORMING && phaseTimer > FORM_DURATION) {
-        phase = PHASE_FORMED;
-        phaseTimer = 0;
-    }
-    else if (phase === PHASE_FORMED && phaseTimer > HOLD_DURATION) {
-        phase = PHASE_SCATTER;
-        phaseTimer = 0;
-    }
-    else if (phase === PHASE_SCATTER && phaseTimer > SCATTER_DURATION) {
-        phase = PHASE_CHAOS;
-        phaseTimer = 0;
+    } else if (phase === PHASE_FORMING && phaseTimer > FORM_DURATION) {
+        phase = PHASE_FORMED; phaseTimer = 0;
+    } else if (phase === PHASE_FORMED && phaseTimer > HOLD_DURATION) {
+        phase = PHASE_SCATTER; phaseTimer = 0;
+    } else if (phase === PHASE_SCATTER && phaseTimer > SCATTER_DURATION) {
+        phase = PHASE_CHAOS; phaseTimer = 0;
     }
 
     const t = phaseTimer;
-    
     particles.forEach(p => {
         if (phase === PHASE_CHAOS) {
-            // Random walk within circle
-            p.vx += (Math.random() - 0.5) * 0.3;
-            p.vy += (Math.random() - 0.5) * 0.3;
-            p.vx *= 0.98;
-            p.vy *= 0.98;
+            p.vx += (Math.random() - 0.5) * 0.4;
+            p.vy += (Math.random() - 0.5) * 0.4;
+            p.vx *= 0.97;
+            p.vy *= 0.97;
             p.x += p.vx;
             p.y += p.vy;
-            // Keep in circle
-            const dx = p.x - CX, dy = p.y - CY;
-            const dist = Math.sqrt(dx*dx + dy*dy);
-            if (dist > RADIUS * 0.85) {
-                p.x = CX + dx/dist * RADIUS * 0.85;
-                p.y = CY + dy/dist * RADIUS * 0.85;
-                p.vx *= -0.5;
-                p.vy *= -0.5;
-            }
-        }
-        else if (phase === PHASE_FORMING) {
+            if (p.x < 0 || p.x > W) p.vx *= -0.5;
+            if (p.y < 0 || p.y > H) p.vy *= -0.5;
+            p.x = Math.max(0, Math.min(W, p.x));
+            p.y = Math.max(0, Math.min(H, p.y));
+        } else if (phase === PHASE_FORMING) {
             const progress = Math.min(t / FORM_DURATION, 1);
-            const ease = 1 - Math.pow(1 - progress, 3); // ease out cubic
+            const ease = 1 - Math.pow(1 - progress, 3);
             p.x = lerp(p.sx, p.tx, ease);
             p.y = lerp(p.sy, p.ty, ease);
-            // Subtle jitter during formation
-            p.x += (Math.random() - 0.5) * 0.5;
-            p.y += (Math.random() - 0.5) * 0.5;
-        }
-        else if (phase === PHASE_FORMED) {
-            // Hold with tiny breathing jitter
-            const breathe = Math.sin(t * 0.03 + p.tx * 10) * 0.6;
+        } else if (phase === PHASE_FORMED) {
+            const breathe = Math.sin(t * 0.03 + p.tx * 0.05) * 0.8;
             p.x = p.tx + breathe;
-            p.y = p.ty + Math.cos(t * 0.03 + p.ty * 10) * 0.6;
-        }
-        else if (phase === PHASE_SCATTER) {
+            p.y = p.ty + Math.cos(t * 0.03 + p.ty * 0.05) * 0.8;
+        } else if (phase === PHASE_SCATTER) {
             const progress = Math.min(t / SCATTER_DURATION, 1);
-            const ease = progress * progress; // ease in
-            p.x = lerp(p.tx, p.sx, ease) + (Math.random() - 0.5) * ease * 4;
-            p.y = lerp(p.ty, p.sy, ease) + (Math.random() - 0.5) * ease * 4;
+            const ease = progress * progress;
+            p.x = lerp(p.tx, p.sx, ease);
+            p.y = lerp(p.ty, p.sy, ease);
         }
     });
 }
 
-function drawParticles() {
+function draw() {
     ctx.clearRect(0, 0, W, H);
     
-    // Draw subtle background circle
-    ctx.beginPath();
-    ctx.arc(CX, CY, RADIUS, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(248,250,252,0.6)';
-    ctx.fill();
+    // Draw photo as subtle background
+    if (img.complete && img.naturalWidth > 0) {
+        ctx.save();
+        ctx.globalAlpha = 0.08;
+        // Draw to fit canvas
+        const s = Math.min(W/img.naturalWidth, H/img.naturalHeight);
+        const dx = (W - img.naturalWidth * s) / 2;
+        const dy = (H - img.naturalHeight * s) / 2;
+        ctx.drawImage(img, dx, dy, img.naturalWidth * s, img.naturalHeight * s);
+        ctx.restore();
+    }
     
-    // Clipping to circle
-    ctx.save();
-    ctx.beginPath();
-    ctx.arc(CX, CY, RADIUS, 0, Math.PI * 2);
-    ctx.clip();
+    // Draw particles - single color, dark
+    const isFormed = phase === PHASE_FORMED;
+    const isForming = phase === PHASE_FORMING;
     
-    // Draw particles
     particles.forEach(p => {
-        const isForming = phase === PHASE_FORMING || phase === PHASE_FORMED;
-        const alpha = isForming ? 0.7 : 0.3 + Math.random() * 0.3;
-        const size = isForming ? p.size * 1.2 : p.size * 0.8;
+        const alpha = isFormed ? 0.85 : isForming ? 0.5 + progress * 0.35 : 0.3;
+        const sz = isFormed ? p.size * 1.3 : p.size;
         
         ctx.beginPath();
-        ctx.arc(p.x, p.y, size, 0, Math.PI * 2);
-        
-        if (isForming) {
-            // Contour particles - darker, more defined
-            ctx.fillStyle = `rgba(15,23,42,${alpha * 0.9})`;
-        } else {
-            // Chaotic particles - colorful
-            const hue = (p.x / W * 360 + p.y / H * 360) % 360;
-            ctx.fillStyle = `hsla(${hue}, 70%, 55%, ${alpha * 0.5})`;
-        }
+        ctx.arc(p.x, p.y, sz, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(15,23,42,${alpha})`;
         ctx.fill();
     });
-    
-    ctx.restore();
-    
-    // Subtle ring
-    ctx.beginPath();
-    ctx.arc(CX, CY, RADIUS, 0, Math.PI * 2);
-    ctx.strokeStyle = 'rgba(244,63,94,0.08)';
-    ctx.lineWidth = 1;
-    ctx.stroke();
 }
 
+let progress = 0;
 function animate() {
-    updateParticles();
-    drawParticles();
+    update();
+    if (phase === PHASE_FORMING) progress = Math.min(phaseTimer / FORM_DURATION, 1);
+    draw();
     requestAnimationFrame(animate);
 }
 
 initParticles();
-animate();
+// Wait for image to load before starting
+if (img.complete) animate();
+else img.onload = animate;
 
 // Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(a => {
