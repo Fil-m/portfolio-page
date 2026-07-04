@@ -4,35 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Тарас Москаленко — Людина. Творець.</title>
-    <meta name="description" content="Тарас Москаленко — спеціаліст з розвитку. Анімація для дітей, 3D-друк, гейм-девелопмент, AI-агенти, творчість.">
+    <meta name="description" content="Тарас Москаленко — спеціаліст з розвитку. Анімація для дітей, 3D-друк, гейм-девелопмент, творчість, психологія.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
         :root{
-            --bg:#faf7f2;
-            --bg2:#f5f0e8;
-            --bg3:#efe9de;
+            --bg:#f8fafc;
+            --bg2:#f1f5f9;
             --surface:#ffffff;
-            --surface2:#faf7f2;
-            --coral:#e8615a;
-            --teal:#3a8f8a;
-            --amber:#d4933a;
-            --lavender:#8b7bb8;
-            --rose:#d4647a;
-            --mint:#6aab8e;
-            --sky:#5a8fc9;
-            --sun:#e8b84a;
-            --text:#2c2420;
-            --text2:#6b5d55;
-            --text3:#9a8c84;
+            --rose:#f43f5e;
+            --sky:#0ea5e9;
+            --mint:#22c55e;
+            --sun:#eab308;
+            --purple:#a855f7;
+            --teal:#06b6d4;
+            --text:#0f172a;
+            --text2:#475569;
+            --text3:#94a3b8;
             --font:'Outfit',sans-serif;
             --font-body:'Inter',sans-serif;
             --radius:20px;
             --radius-sm:12px;
-            --shadow:0 2px 16px rgba(44,36,32,0.06);
-            --shadow-hover:0 8px 32px rgba(44,36,32,0.1);
+            --shadow:0 1px 4px rgba(15,23,42,0.04), 0 2px 12px rgba(15,23,42,0.04);
+            --shadow-hover:0 4px 20px rgba(15,23,42,0.08), 0 8px 32px rgba(15,23,42,0.04);
         }
         html{scroll-behavior:smooth}
         body{
@@ -46,26 +42,25 @@
         /* ─── NAV ─── */
         nav{
             position:fixed;top:0;left:0;right:0;z-index:100;
-            padding:18px 0;
-            background:rgba(250,247,242,0.85);
+            padding:16px 0;
+            background:rgba(255,255,255,0.85);
             backdrop-filter:blur(16px);
-            border-bottom:1px solid rgba(44,36,32,0.06);
-            transition:all 0.3s;
+            border-bottom:1px solid rgba(15,23,42,0.05);
         }
         .nav-inner{
             display:flex;align-items:center;justify-content:space-between;
             max-width:1100px;margin:0 auto;padding:0 28px;
         }
         .nav-logo{
-            font-family:var(--font);font-weight:700;font-size:1.15rem;
-            color:var(--coral);
+            font-family:var(--font);font-weight:700;font-size:1.1rem;
+            color:var(--rose);
         }
-        .nav-links{display:flex;gap:6px;list-style:none;flex-wrap:wrap;}
+        .nav-links{display:flex;gap:4px;list-style:none;flex-wrap:wrap;}
         .nav-links a{
-            color:var(--text2);text-decoration:none;font-size:0.85rem;font-weight:500;
-            padding:6px 16px;border-radius:20px;transition:all 0.2s;
+            color:var(--text2);text-decoration:none;font-size:0.82rem;font-weight:500;
+            padding:5px 14px;border-radius:20px;transition:all 0.2s;
         }
-        .nav-links a:hover{color:var(--text);background:rgba(232,97,90,0.08);}
+        .nav-links a:hover{color:var(--rose);background:rgba(244,63,94,0.06);}
 
         /* ─── HERO ─── */
         .hero{
@@ -73,59 +68,55 @@
             padding:120px 0 80px;position:relative;overflow:hidden;
         }
         .hero::before{
-            content:'';position:absolute;top:-40%;right:-20%;width:70%;height:140%;
-            background:radial-gradient(ellipse, rgba(232,97,90,0.06) 0%, transparent 70%);
+            content:'';position:absolute;top:-30%;right:-10%;width:60%;height:120%;
+            background:radial-gradient(ellipse, rgba(244,63,94,0.05) 0%, transparent 70%);
             pointer-events:none;
         }
         .hero::after{
-            content:'';position:absolute;bottom:-30%;left:-10%;width:50%;height:100%;
-            background:radial-gradient(ellipse, rgba(58,143,138,0.05) 0%, transparent 70%);
+            content:'';position:absolute;bottom:-20%;left:-5%;width:40%;height:80%;
+            background:radial-gradient(ellipse, rgba(14,165,233,0.04) 0%, transparent 70%);
             pointer-events:none;
         }
         .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1;}
         .hero-badge{
             display:inline-block;
-            background:rgba(232,97,90,0.1);
-            color:var(--coral);
+            background:rgba(244,63,94,0.08);
+            color:var(--rose);
             font-size:0.78rem;font-weight:600;letter-spacing:1.5px;
-            padding:5px 16px;border-radius:20px;margin-bottom:20px;
+            padding:5px 16px;border-radius:20px;margin-bottom:18px;
         }
         .hero h1{
             font-family:var(--font);font-size:3.2rem;font-weight:800;line-height:1.1;
-            margin-bottom:20px;color:var(--text);
+            margin-bottom:18px;color:var(--text);
         }
-        .hero h1 .highlight{
-            color:var(--coral);
-        }
+        .hero h1 .hl{color:var(--rose);}
         .hero-sub{
-            font-size:1.1rem;color:var(--text2);max-width:500px;margin-bottom:32px;
+            font-size:1.05rem;color:var(--text2);max-width:480px;margin-bottom:28px;
             line-height:1.8;
         }
-        .hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px;}
+        .hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;}
         .hero-tag{
-            font-size:0.78rem;font-weight:500;
+            font-size:0.76rem;font-weight:500;
             padding:5px 14px;border-radius:20px;
             background:var(--surface);color:var(--text2);
-            border:1px solid rgba(44,36,32,0.06);
             box-shadow:var(--shadow);
             transition:all 0.2s;
         }
         .hero-tag:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover);}
-        .hero-cta{display:flex;gap:12px;flex-wrap:wrap;}
+        .hero-cta{display:flex;gap:10px;flex-wrap:wrap;}
         .btn{
             display:inline-flex;align-items:center;gap:8px;
-            padding:12px 28px;border-radius:30px;
-            font-family:var(--font-body);font-size:0.9rem;font-weight:600;
+            padding:11px 26px;border-radius:30px;
+            font-family:var(--font-body);font-size:0.88rem;font-weight:600;
             text-decoration:none;transition:all 0.2s;border:none;cursor:pointer;
         }
         .btn-primary{
-            background:var(--coral);color:#fff;
-            box-shadow:0 4px 16px rgba(232,97,90,0.25);
+            background:var(--rose);color:#fff;
+            box-shadow:0 4px 14px rgba(244,63,94,0.25);
         }
-        .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,97,90,0.35);}
+        .btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(244,63,94,0.35);}
         .btn-outline{
             background:var(--surface);color:var(--text);
-            border:1px solid rgba(44,36,32,0.1);
             box-shadow:var(--shadow);
         }
         .btn-outline:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover);}
@@ -135,10 +126,10 @@
         }
         .hero-avatar{
             width:300px;height:300px;border-radius:50%;
-            background:linear-gradient(135deg, var(--coral), var(--rose), var(--lavender));
+            background:linear-gradient(135deg, var(--rose), var(--purple), var(--sky));
             display:flex;align-items:center;justify-content:center;
-            font-size:6.5rem;position:relative;
-            box-shadow:0 8px 40px rgba(232,97,90,0.15);
+            font-size:6.5rem;
+            box-shadow:0 8px 40px rgba(244,63,94,0.12);
         }
         .hero-avatar-inner{
             width:286px;height:286px;border-radius:50%;
@@ -152,10 +143,10 @@
             position:absolute;width:10px;height:10px;border-radius:50%;
             opacity:0.5;animation:float 6s ease-in-out infinite;
         }
-        .hero-dot:nth-child(1){background:var(--amber);top:8%;left:55%;width:12px;height:12px;}
+        .hero-dot:nth-child(1){background:var(--rose);top:8%;left:55%;width:14px;height:14px;}
         .hero-dot:nth-child(2){background:var(--teal);top:72%;left:8%;animation-delay:-1.5s;}
-        .hero-dot:nth-child(3){background:var(--sun);top:25%;right:8%;animation-delay:-3s;}
-        .hero-dot:nth-child(4){background:var(--mint);bottom:18%;right:22%;animation-delay:-4.5s;}
+        .hero-dot:nth-child(3){background:var(--sun);top:22%;right:8%;animation-delay:-3s;}
+        .hero-dot:nth-child(4){background:var(--mint);bottom:16%;right:22%;animation-delay:-4.5s;}
         @keyframes float{
             0%,100%{transform:translateY(0)}
             50%{transform:translateY(-12px)}
@@ -166,168 +157,144 @@
         .section-label{
             display:inline-block;
             font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:3px;
-            color:var(--coral);margin-bottom:8px;
+            color:var(--rose);margin-bottom:8px;
         }
         .section-title{
-            font-family:var(--font);font-size:2.4rem;font-weight:700;
-            margin-bottom:12px;line-height:1.2;color:var(--text);
+            font-family:var(--font);font-size:2.2rem;font-weight:700;
+            margin-bottom:10px;line-height:1.2;color:var(--text);
         }
         .section-desc{
-            color:var(--text2);font-size:1rem;max-width:600px;margin-bottom:44px;
+            color:var(--text2);font-size:0.95rem;max-width:580px;margin-bottom:40px;
         }
 
         /* ─── ABOUT ─── */
-        .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+        .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
         .about-card{
             background:var(--surface);border-radius:var(--radius);
-            padding:30px;box-shadow:var(--shadow);
-            border:1px solid rgba(44,36,32,0.04);
+            padding:28px;box-shadow:var(--shadow);
         }
         .about-card h3{
-            font-family:var(--font);font-size:1.05rem;font-weight:700;
+            font-family:var(--font);font-size:1rem;font-weight:700;
             margin-bottom:10px;display:flex;align-items:center;gap:10px;
-            color:var(--coral);
+            color:var(--rose);
         }
-        .about-card p{color:var(--text2);font-size:0.9rem;line-height:1.8;}
+        .about-card p{color:var(--text2);font-size:0.88rem;line-height:1.8;}
 
         /* ─── FACETS ─── */
-        .facets-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;}
+        .facets-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;}
         .facet-card{
             background:var(--surface);border-radius:var(--radius);
-            padding:26px 22px;box-shadow:var(--shadow);
-            border:1px solid rgba(44,36,32,0.04);
+            padding:24px 20px;box-shadow:var(--shadow);
             text-align:center;transition:all 0.25s;
         }
-        .facet-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover);}
-        .facet-icon{font-size:2.2rem;margin-bottom:10px;}
+        .facet-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);}
+        .facet-icon{font-size:2rem;margin-bottom:8px;}
         .facet-card h3{
-            font-family:var(--font);font-size:0.95rem;font-weight:700;
-            margin-bottom:5px;color:var(--text);
+            font-family:var(--font);font-size:0.9rem;font-weight:700;
+            margin-bottom:4px;color:var(--text);
         }
-        .facet-card p{color:var(--text2);font-size:0.8rem;line-height:1.6;}
+        .facet-card p{color:var(--text2);font-size:0.78rem;line-height:1.6;}
 
         /* ─── PROJECTS ─── */
-        .projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px;}
+        .projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;}
         .project-card-link{
-            text-decoration:none;color:inherit;display:block;
-            border-radius:var(--radius);
+            text-decoration:none;color:inherit;display:block;border-radius:var(--radius);
         }
         .project-card{
             background:var(--surface);border-radius:var(--radius);
-            padding:26px;box-shadow:var(--shadow);
-            border:1px solid rgba(44,36,32,0.04);
-            transition:all 0.25s;position:relative;overflow:hidden;height:100%;
-            cursor:pointer;
+            padding:24px;box-shadow:var(--shadow);
+            transition:all 0.25s;position:relative;overflow:hidden;height:100%;cursor:pointer;
         }
         .project-card::before{
             content:'';position:absolute;top:0;left:0;right:0;height:3px;
-            background:var(--accent-card,var(--coral));opacity:0.4;
+            background:var(--accent-card,var(--rose));opacity:0.3;
         }
-        .project-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover);}
-        .project-card:hover::before{opacity:0.8;}
+        .project-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);}
+        .project-card:hover::before{opacity:0.7;}
         .project-cat{
-            font-size:0.66rem;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;
-            color:var(--accent-card,var(--coral));margin-bottom:8px;
+            font-size:0.64rem;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;
+            color:var(--accent-card,var(--rose));margin-bottom:6px;
         }
         .project-card h3{
-            font-family:var(--font);font-size:1.1rem;font-weight:700;
+            font-family:var(--font);font-size:1.05rem;font-weight:700;
             margin-bottom:6px;color:var(--text);
         }
         .project-card p{
-            color:var(--text2);font-size:0.82rem;line-height:1.7;
-            margin-bottom:14px;
+            color:var(--text2);font-size:0.8rem;line-height:1.7;
+            margin-bottom:12px;
         }
-        .project-techs{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px;}
+        .project-techs{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;}
         .project-tech{
-            font-size:0.68rem;font-weight:500;
+            font-size:0.66rem;font-weight:500;
             padding:2px 10px;border-radius:10px;
-            background:rgba(44,36,32,0.04);
+            background:rgba(15,23,42,0.04);
             color:var(--text3);
         }
-        .project-links{display:flex;gap:12px;}
+        .project-links{display:flex;gap:10px;}
         .project-links a{
-            color:var(--text3);font-size:0.78rem;font-weight:500;
+            color:var(--text3);font-size:0.76rem;font-weight:500;
             text-decoration:none;transition:color 0.2s;
             display:inline-flex;align-items:center;gap:4px;
             position:relative;z-index:2;
         }
-        .project-links a:hover{color:var(--coral);}
-
-        /* ─── CREATIVE SECTION ─── */
-        .creative-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
-        .creative-card{
-            background:var(--surface);border-radius:var(--radius);
-            padding:30px;box-shadow:var(--shadow);
-            border:1px solid rgba(44,36,32,0.04);
-            text-align:center;transition:all 0.25s;
-        }
-        .creative-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);}
-        .creative-card .big-icon{font-size:2.8rem;margin-bottom:12px;}
-        .creative-card h3{
-            font-family:var(--font);font-size:1.1rem;font-weight:700;
-            margin-bottom:6px;color:var(--text);
-        }
-        .creative-card p{color:var(--text2);font-size:0.88rem;line-height:1.7;}
+        .project-links a:hover{color:var(--rose);}
 
         /* ─── CONTACT ─── */
-        .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
-        .contact-links{display:flex;flex-direction:column;gap:12px;}
+        .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;}
+        .contact-links{display:flex;flex-direction:column;gap:10px;}
         .contact-item{
             display:flex;align-items:center;gap:14px;
-            padding:16px 20px;border-radius:var(--radius-sm);
+            padding:14px 18px;border-radius:var(--radius-sm);
             background:var(--surface);box-shadow:var(--shadow);
-            border:1px solid rgba(44,36,32,0.04);
             text-decoration:none;color:var(--text);transition:all 0.2s;
         }
         .contact-item:hover{transform:translateX(4px);box-shadow:var(--shadow-hover);}
-        .contact-icon{font-size:1.3rem;width:32px;text-align:center;}
-        .contact-label{font-size:0.75rem;color:var(--text3);}
-        .contact-value{font-size:0.9rem;font-weight:500;}
-        .contact-side{display:flex;flex-direction:column;gap:16px;}
+        .contact-icon{font-size:1.2rem;width:30px;text-align:center;}
+        .contact-label{font-size:0.73rem;color:var(--text3);}
+        .contact-value{font-size:0.88rem;font-weight:500;}
+        .contact-side{display:flex;flex-direction:column;gap:14px;}
 
         /* ─── FOOTER ─── */
         footer{
-            text-align:center;padding:40px 0;
-            border-top:1px solid rgba(44,36,32,0.06);
-            color:var(--text3);font-size:0.82rem;
+            text-align:center;padding:36px 0;
+            border-top:1px solid rgba(15,23,42,0.05);
+            color:var(--text3);font-size:0.8rem;
             background:var(--bg2);
         }
 
         /* ─── RESPONSIVE ─── */
         @media(max-width:900px){
-            .hero-grid{grid-template-columns:1fr;gap:40px;text-align:center;}
-            .hero h1{font-size:2.4rem;}
+            .hero-grid{grid-template-columns:1fr;gap:36px;text-align:center;}
+            .hero h1{font-size:2.2rem;}
             .hero-sub{margin-left:auto;margin-right:auto;}
-            .hero-cta{justify-content:center;}
-            .hero-tags{justify-content:center;}
+            .hero-cta,.hero-tags{justify-content:center;}
             .hero-visual{order:-1;}
             .hero-avatar{width:200px;height:200px;font-size:4.5rem;}
             .hero-avatar-inner{width:188px;height:188px;}
             .about-grid,.creative-grid{grid-template-columns:1fr;}
             .contact-grid{grid-template-columns:1fr;}
             .projects-grid{grid-template-columns:1fr;}
-            .section-title{font-size:1.8rem;}
+            .section-title{font-size:1.6rem;}
             .nav-links{display:none;}
             .hero::before,.hero::after{display:none;}
         }
         @media(max-width:480px){
-            .hero h1{font-size:1.8rem;}
+            .hero h1{font-size:1.6rem;}
             .hero{padding:100px 0 40px;}
-            section{padding:60px 0;}
-            .container{padding:0 18px;}
+            section{padding:50px 0;}
+            .container{padding:0 16px;}
+            .facets-grid{grid-template-columns:1fr;}
         }
     </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav id="nav">
+<nav>
     <div class="nav-inner">
         <div class="nav-logo">✦ Тарас Москаленко</div>
         <ul class="nav-links">
             <li><a href="#about">Про мене</a></li>
             <li><a href="#facets">Грані</a></li>
-            <li><a href="#creative">Творчість</a></li>
             <li><a href="#projects">Проєкти</a></li>
             <li><a href="#contact">Контакти</a></li>
         </ul>
@@ -342,12 +309,12 @@
                 <div class="hero-badge">🌱 Спеціаліст з розвитку</div>
                 <h1>
                     Привіт!<br>
-                    Я <span class="highlight">Тарас Москаленко</span>
+                    Я <span class="hl">Тарас Москаленко</span>
                 </h1>
                 <p class="hero-sub">
                     Допомагаю людям робити крок від «хочу» до «роблю». 
                     Через анімацію, технології, психологію, творчість 
-                    і волонтерство. Іноді — просто через розмову.
+                    і волонтерство. А іноді — просто через розмову.
                 </p>
                 <div class="hero-tags">
                     <span class="hero-tag">🌱 Розвиток</span>
@@ -357,11 +324,10 @@
                     <span class="hero-tag">🤖 AI</span>
                     <span class="hero-tag">🎵 Музика</span>
                     <span class="hero-tag">🎨 Арт</span>
+                    <span class="hero-tag">🏔️ Походи</span>
                 </div>
                 <div class="hero-cta">
-                    <a href="https://github.com/Fil-m" class="btn btn-primary" target="_blank">🐙 GitHub</a>
-                    <a href="https://www.instagram.com/moskalenko_taras/" class="btn btn-outline" target="_blank">📸 Instagram</a>
-                    <a href="#projects" class="btn btn-outline">📂 Проєкти ↓</a>
+                    <a href="#projects" class="btn btn-primary">📂 Проєкти ↓</a>
                 </div>
             </div>
             <div class="hero-visual">
@@ -388,8 +354,8 @@
             З Києва, живу в Карлсруе. Кіноосвіта, диплом психолога, 
             досвід в анімації, безкінечна цікавість до того, як працює 
             людина — від фізіології до нейрональної парадигми. 
-            Об'єдную творчість, технічну експертизу і людяність 
-            у проєктах, які мають сенс.
+            Об'єдную творчість, техніку і людяність у проєктах, 
+            які мають сенс.
         </p>
         <div class="about-grid">
             <div class="about-card">
@@ -398,8 +364,7 @@
                     Найбільше я проявляю себе в проєкті <strong>«Дія до мрії»</strong>.
                     Бути напарником для людини, яка хоче зробити перший крок 
                     до своєї мрії. Без рамок, без вікових обмежень, 
-                    через маленькі реальні експерименти. Це нове для мене — 
-                    і це чесно.
+                    через маленькі реальні експерименти.
                 </p>
             </div>
             <div class="about-card">
@@ -433,7 +398,7 @@
     </div>
 </section>
 
-<!-- FACETS -->
+<!-- FACETS (включно з творчістю) -->
 <section id="facets">
     <div class="container">
         <div class="section-label">✦ Грані</div>
@@ -451,7 +416,7 @@
             <div class="facet-card">
                 <div class="facet-icon">🎬</div>
                 <h3>Анімація для дітей</h3>
-                <p>Навчаю дорослих робити мультики з дітьми. Анімація як інструмент розвитку: проектне мислення, концентрація, доведення до кінця.</p>
+                <p>Навчаю дорослих робити мультики з дітьми. Анімація як інструмент розвитку: проектне мислення, концентрація, фестивалі.</p>
             </div>
             <div class="facet-card">
                 <div class="facet-icon">🖨️</div>
@@ -461,22 +426,27 @@
             <div class="facet-card">
                 <div class="facet-icon">🎮</div>
                 <h3>Гейм-девелопмент</h3>
-                <p>HTML5 ігри: Recoil Gun, BitSprite, Habitat OS. Фізика, канвас, рушії з нуля. Гра як середовище розвитку.</p>
+                <p>HTML5 ігри з нуля: Recoil Gun, BitSprite, Habitat OS. Фізика, канвас, гра як середовище розвитку.</p>
             </div>
             <div class="facet-card">
                 <div class="facet-icon">🤖</div>
                 <h3>AI та автоматизація</h3>
-                <p>Multi-agent системи, LLM-пайплайни, Telegram боти, SMM-автоматизація. AI як інструмент, не ціль.</p>
+                <p>Multi-agent системи, LLM-пайплайни, Telegram боти, SMM. AI як інструмент, не ціль.</p>
             </div>
             <div class="facet-card">
                 <div class="facet-icon">🧠</div>
                 <h3>Психологія</h3>
-                <p>Фізіологія ВНД, нейрональна парадигма, біхевіоризм. NeuroMarker Suite, скринінг, дослідження розвитку.</p>
+                <p>Фізіологія ВНД, нейрональна парадигма, біхевіоризм. NeuroMarker Suite, скринінг, дослідження.</p>
             </div>
             <div class="facet-card">
-                <div class="facet-icon">📱</div>
-                <h3>Продукти</h3>
-                <p>Від концепту до деплою: Django, Vue, HTML/JS/CSS. Telegram боти, мобільні застосунки, веб-платформи.</p>
+                <div class="facet-icon">🎵</div>
+                <h3>Музика</h3>
+                <p>Аматорські треки, спів. Музика для мене — спонтанність і вираження моменту.</p>
+            </div>
+            <div class="facet-card">
+                <div class="facet-icon">🎨</div>
+                <h3>Арт та імпровізація</h3>
+                <p>Колажі, малювання, арт зі сміттям. Спонтанні фільми з друзями. Найкраще народжується без сценарію.</p>
             </div>
             <div class="facet-card">
                 <div class="facet-icon">🏔️</div>
@@ -487,45 +457,8 @@
     </div>
 </section>
 
-<!-- CREATIVE -->
-<section id="creative" style="background:var(--bg2);">
-    <div class="container">
-        <div class="section-label">✦ Творчість</div>
-        <h2 class="section-title">Мистецтво та імпровізація</h2>
-        <p class="section-desc">
-            Я люблю створювати — не тільки код чи продукти, але й музику, 
-            фільми, колажі. Спонтанно, для душі, з друзями.
-        </p>
-        <div class="creative-grid">
-            <div class="creative-card">
-                <div class="big-icon">🎵</div>
-                <h3>Музика</h3>
-                <p>Аматорські музичні треки, люблю співати. Музика для мене — це спонтанність і вираження моменту.</p>
-            </div>
-            <div class="creative-card">
-                <div class="big-icon">🎬</div>
-                <h3>Спонтанне кіно</h3>
-                <p>Знімаю фільми з друзями — без сценарію, без підготовки, просто заради процесу і сміху.</p>
-            </div>
-            <div class="creative-card">
-                <div class="big-icon">🎨</div>
-                <h3>Арт та колажі</h3>
-                <p>Малювання, колажування, арт зі сміттям і підручними матеріалами. Люблю експериментувати з текстурами і формою.</p>
-            </div>
-            <div class="creative-card">
-                <div class="big-icon">✨</div>
-                <h3>Імпровізація</h3>
-                <p>Найкращі речі народжуються спонтанно. В музиці, в кіно, в житті — я за процес без контролю.</p>
-            </div>
-        </div>
-        <div style="text-align:center;margin-top:28px;">
-            <a href="https://www.instagram.com/moskalenko_taras/" target="_blank" class="btn btn-primary">📸 Instagram — більше творчості</a>
-        </div>
-    </div>
-</section>
-
 <!-- PROJECTS -->
-<section id="projects">
+<section id="projects" style="background:var(--bg2);">
     <div class="container">
         <div class="section-label">✧ Проєкти</div>
         <h2 class="section-title">Проєкти</h2>
@@ -535,219 +468,155 @@
         </p>
         <div class="projects-grid">
 
-            <!-- Дія до мрії ★ -->
             <a href="https://fil-m.github.io/diya-do-mriyi/" target="_blank" class="project-card-link">
-            <div class="project-card" style="--accent-card:#e8615a;border-color:rgba(232,97,90,0.12);">
+            <div class="project-card" style="--accent-card:#f43f5e;border-color:rgba(244,63,94,0.1);">
                 <div class="project-cat">🌱 Сенс цього всього</div>
                 <h3>★ Дія до мрії</h3>
                 <p>Мій центральний проєкт. Напарник для старту: допомагаю перейти від мрії до першої реальної дії. Без вікових обмежень, безкоштовно.</p>
-                <div class="project-techs">
-                    <span class="project-tech">Сенс</span>
-                </div>
                 <div class="project-links">
                     <a href="https://github.com/Fil-m/diya-do-mriyi" target="_blank" onclick="event.stopPropagation()">🐙 GitHub</a>
                 </div>
             </div>
             </a>
 
-            <!-- Animation Mentors -->
             <a href="https://fil-m.github.io/animation_mentors/" target="_blank" class="project-card-link">
-            <div class="project-card" style="--accent-card:#8b7bb8;">
+            <div class="project-card" style="--accent-card:#a855f7;">
                 <div class="project-cat">🎬 Анімація та розвиток</div>
                 <h3>Animation Mentors</h3>
                 <p>Навчаю дорослих робити мультики з дітьми. ADHD-friendly, підготовка до фестивалів (Annecy, Zlín). Формат «ментор — дитина — батьки».</p>
-                <div class="project-techs">
-                    <span class="project-tech">HTML</span>
-                    <span class="project-tech">CSS</span>
-                    <span class="project-tech">JS</span>
-                </div>
+                <div class="project-techs"><span class="project-tech">HTML</span><span class="project-tech">CSS</span><span class="project-tech">JS</span></div>
                 <div class="project-links">
                     <a href="https://github.com/Fil-m/animation_mentors" target="_blank" onclick="event.stopPropagation()">🐙 GitHub</a>
                 </div>
             </div>
             </a>
 
-            <!-- Стіна 3D -->
             <a href="https://fil-m.github.io/stina-3d/" target="_blank" class="project-card-link">
-            <div class="project-card" style="--accent-card:#6aab8e;">
+            <div class="project-card" style="--accent-card:#22c55e;">
                 <div class="project-cat">🖨️ 3D-Друк та волонтерство</div>
                 <h3>Стіна 3D друкарня</h3>
                 <p>Бюджетна волонтерська 3D-ферма в Карлсруе. Медичні компоненти, протези, освітні моделі. 8 принтерів.</p>
-                <div class="project-techs">
-                    <span class="project-tech">HTML</span>
-                    <span class="project-tech">Klipper</span>
-                    <span class="project-tech">FreeCAD</span>
-                </div>
+                <div class="project-techs"><span class="project-tech">HTML</span><span class="project-tech">Klipper</span><span class="project-tech">FreeCAD</span></div>
                 <div class="project-links">
                     <a href="https://github.com/Fil-m/stina-3d" target="_blank" onclick="event.stopPropagation()">🐙 GitHub</a>
                 </div>
             </div>
             </a>
 
-            <!-- Recoil Gun -->
             <a href="https://github.com/Fil-m/recoil-game" target="_blank" class="project-card-link">
-            <div class="project-card" style="--accent-card:#d4647a;">
+            <div class="project-card" style="--accent-card:#f43f5e;">
                 <div class="project-cat">🎮 Ігри</div>
                 <h3>Recoil Gun</h3>
-                <p>Браузерний бойовик з фізикою віддачі. Керуйте зброєю через інерцію — летіть, крутіться, знищуйте ворогів. Canvas, фізика з нуля.</p>
-                <div class="project-techs">
-                    <span class="project-tech">JavaScript</span>
-                    <span class="project-tech">Canvas</span>
-                </div>
+                <p>Браузерний бойовик з фізикою віддачі. Керуйте зброєю через інерцію — летіть, крутіться, знищуйте ворогів.</p>
+                <div class="project-techs"><span class="project-tech">JavaScript</span><span class="project-tech">Canvas</span></div>
             </div>
             </a>
 
-            <!-- Infinity Braves -->
             <a href="https://github.com/Fil-m/--braves" target="_blank" class="project-card-link">
-            <div class="project-card" style="--accent-card:#8b7bb8;">
+            <div class="project-card" style="--accent-card:#a855f7;">
                 <div class="project-cat">🧠 Спільнота</div>
                 <h3>Infinity Braves</h3>
                 <p>Група підтримки для нейровідмінних дорослих (РАС, СДВГ) в Карлсруе. Безпечний простір, скринінг.</p>
-                <div class="project-techs">
-                    <span class="project-tech">Django</span>
-                    <span class="project-tech">Python</span>
-                </div>
+                <div class="project-techs"><span class="project-tech">Django</span><span class="project-tech">Python</span></div>
             </div>
             </a>
 
-            <!-- Habitat OS -->
             <a href="https://github.com/Fil-m/habitat-os-test" target="_blank" class="project-card-link">
-            <div class="project-card" style="--accent-card:#5a8fc9;">
+            <div class="project-card" style="--accent-card:#0ea5e9;">
                 <div class="project-cat">🎮 Платформа</div>
                 <h3>Habitat OS</h3>
                 <p>Мобільна ігрова платформа-ОС. Match-3, магазин скінів, міні-ігри. Модульна система.</p>
-                <div class="project-techs">
-                    <span class="project-tech">HTML</span>
-                    <span class="project-tech">JS</span>
-                    <span class="project-tech">Python</span>
-                </div>
+                <div class="project-techs"><span class="project-tech">HTML</span><span class="project-tech">JS</span><span class="project-tech">Python</span></div>
                 <div class="project-links">
                     <a href="https://github.com/Fil-m/habitat-os-workshop" target="_blank" onclick="event.stopPropagation()">🐙 Workshop</a>
                 </div>
             </div>
             </a>
 
-            <!-- Akira -->
             <a href="https://fil-m.github.io/akira-mental-math/" target="_blank" class="project-card-link">
-            <div class="project-card" style="--accent-card:#d4933a;">
+            <div class="project-card" style="--accent-card:#eab308;">
                 <div class="project-cat">📚 Освіта</div>
                 <h3>Akira Mental Math</h3>
-                <p>Генератор вправ для ментальної арифметики на абакусі. Інтерактивний тренажер, розвиває концентрацію.</p>
-                <div class="project-techs">
-                    <span class="project-tech">HTML</span>
-                    <span class="project-tech">JS</span>
-                </div>
+                <p>Генератор вправ для ментальної арифметики на абакусі. Інтерактивний тренажер для концентрації.</p>
+                <div class="project-techs"><span class="project-tech">HTML</span><span class="project-tech">JS</span></div>
                 <div class="project-links">
                     <a href="https://github.com/Fil-m/akira-mental-math" target="_blank" onclick="event.stopPropagation()">🐙 GitHub</a>
                 </div>
             </div>
             </a>
 
-            <!-- BitSprite -->
             <a href="https://github.com/Fil-m/bitsprite" target="_blank" class="project-card-link">
-            <div class="project-card" style="--accent-card:#d4647a;">
+            <div class="project-card" style="--accent-card:#f43f5e;">
                 <div class="project-cat">🎮 Ігри</div>
                 <h3>BitSprite</h3>
-                <p>Платформер / sandbox. Дослідження піксельних світів, квести, ресурси. Чистий Canvas + JavaScript.</p>
-                <div class="project-techs">
-                    <span class="project-tech">JavaScript</span>
-                    <span class="project-tech">Canvas</span>
-                </div>
+                <p>Платформер / sandbox. Піксельні світи, квести, ресурси. Чистий Canvas + JavaScript.</p>
+                <div class="project-techs"><span class="project-tech">JavaScript</span><span class="project-tech">Canvas</span></div>
             </div>
             </a>
 
-            <!-- NeuroMarker Suite -->
             <a href="https://github.com/Fil-m/neuromarker-suite" target="_blank" class="project-card-link">
-            <div class="project-card" style="--accent-card:#8b7bb8;">
+            <div class="project-card" style="--accent-card:#a855f7;">
                 <div class="project-cat">🧠 Нейропсихологія</div>
                 <h3>NeuroMarker Suite</h3>
-                <p>Інструменти нейропсихологічного скринінгу. Когнітивні тести, аналіз, трекінг прогресу.</p>
-                <div class="project-techs">
-                    <span class="project-tech">Python</span>
-                    <span class="project-tech">JS</span>
-                </div>
+                <p>Інструменти скринінгу. Когнітивні тести, аналіз, трекінг прогресу.</p>
+                <div class="project-techs"><span class="project-tech">Python</span><span class="project-tech">JS</span></div>
             </div>
             </a>
 
-            <!-- Aim Lab -->
             <a href="https://fil-m.github.io/aim-lab-scientist/" target="_blank" class="project-card-link">
-            <div class="project-card" style="--accent-card:#5a8fc9;">
+            <div class="project-card" style="--accent-card:#0ea5e9;">
                 <div class="project-cat">🔬 Дослідження</div>
                 <h3>Aim Lab Scientist</h3>
-                <p>NeuroAim Research Suite. Дослідження уваги та сенсомоторних реакцій. Калібрування, аналітика, візуалізація.</p>
-                <div class="project-techs">
-                    <span class="project-tech">JavaScript</span>
-                    <span class="project-tech">Chart.js</span>
-                </div>
+                <p>NeuroAim Research Suite. Дослідження уваги та сенсомоторних реакцій.</p>
+                <div class="project-techs"><span class="project-tech">JavaScript</span><span class="project-tech">Chart.js</span></div>
                 <div class="project-links">
                     <a href="https://github.com/Fil-m/aim-lab-scientist" target="_blank" onclick="event.stopPropagation()">🐙 GitHub</a>
                 </div>
             </div>
             </a>
 
-            <!-- Hermes SKVA -->
             <a href="https://github.com/Fil-m/hermes-skva" target="_blank" class="project-card-link">
-            <div class="project-card" style="--accent-card:#6aab8e;">
+            <div class="project-card" style="--accent-card:#22c55e;">
                 <div class="project-cat">🤖 AI та агенти</div>
                 <h3>Hermes SKVA</h3>
                 <p>Multi-agent production system. Розподілена система AI-агентів для автоматизації складних процесів.</p>
-                <div class="project-techs">
-                    <span class="project-tech">Python</span>
-                    <span class="project-tech">Hermes</span>
-                </div>
+                <div class="project-techs"><span class="project-tech">Python</span><span class="project-tech">Hermes</span></div>
             </div>
             </a>
 
-            <!-- Vlog Automator -->
             <a href="https://github.com/Fil-m/vlog-automator" target="_blank" class="project-card-link">
-            <div class="project-card" style="--accent-card:#3a8f8a;">
+            <div class="project-card" style="--accent-card:#06b6d4;">
                 <div class="project-cat">🎬 Відео та AI</div>
                 <h3>Vlog Automator</h3>
                 <p>AI-автоматизація монтажу. Whisper, візуальний аналіз, експорт у DaVinci Resolve.</p>
-                <div class="project-techs">
-                    <span class="project-tech">Python</span>
-                    <span class="project-tech">Whisper</span>
-                </div>
+                <div class="project-techs"><span class="project-tech">Python</span><span class="project-tech">Whisper</span></div>
             </div>
             </a>
 
-            <!-- Art Picnic -->
             <a href="https://github.com/Fil-m/art-picnic" target="_blank" class="project-card-link">
-            <div class="project-card" style="--accent-card:#e8b84a;">
+            <div class="project-card" style="--accent-card:#eab308;">
                 <div class="project-cat">🎨 Творчість</div>
                 <h3>Art Picnic</h3>
-                <p>Щомісячний безкоштовний арт-пікнік для родин: знімаємо кліп або стопмоушен прямо на галявині.</p>
-                <div class="project-techs">
-                    <span class="project-tech">HTML</span>
-                    <span class="project-tech">CSS</span>
-                </div>
+                <p>Щомісячний арт-пікнік для родин: знімаємо кліп або стопмоушен просто неба.</p>
+                <div class="project-techs"><span class="project-tech">HTML</span><span class="project-tech">CSS</span></div>
             </div>
             </a>
 
-            <!-- EME -->
             <a href="https://github.com/Fil-m/eme" target="_blank" class="project-card-link">
-            <div class="project-card" style="--accent-card:#8b7bb8;">
+            <div class="project-card" style="--accent-card:#a855f7;">
                 <div class="project-cat">⚙️ Платформа</div>
                 <h3>EME</h3>
-                <p>Модульна платформа-екосистема. Vue + Django, Mesh-синхронізація, локальний AI, plugin-система.</p>
-                <div class="project-techs">
-                    <span class="project-tech">Python</span>
-                    <span class="project-tech">Vue</span>
-                    <span class="project-tech">Django</span>
-                </div>
+                <p>Модульна платформа-екосистема. Vue + Django, Mesh-синхронізація, локальний AI, плагіни.</p>
+                <div class="project-techs"><span class="project-tech">Python</span><span class="project-tech">Vue</span><span class="project-tech">Django</span></div>
             </div>
             </a>
 
-            <!-- PythonAnywhere Game -->
             <a href="https://yelyzavetaandriievska.pythonanywhere.com/" target="_blank" class="project-card-link">
-            <div class="project-card" style="--accent-card:#5a8fc9;">
+            <div class="project-card" style="--accent-card:#0ea5e9;">
                 <div class="project-cat">🎮 Django Game</div>
                 <h3>Game Project</h3>
                 <p>Django-гра на PythonAnywhere. Повний цикл: Django → деплой.</p>
-                <div class="project-techs">
-                    <span class="project-tech">Django</span>
-                    <span class="project-tech">Python</span>
-                </div>
+                <div class="project-techs"><span class="project-tech">Django</span><span class="project-tech">Python</span></div>
             </div>
             </a>
 
@@ -756,7 +625,7 @@
 </section>
 
 <!-- CONTACT -->
-<section id="contact" style="background:var(--bg2);">
+<section id="contact">
     <div class="container">
         <div class="section-label">✧ Контакти</div>
         <h2 class="section-title">Зв'язок</h2>
@@ -775,7 +644,7 @@
                 <a href="https://www.instagram.com/moskalenko_taras/" target="_blank" class="contact-item">
                     <div class="contact-icon">📸</div>
                     <div>
-                        <div class="contact-label">Instagram (творчість)</div>
+                        <div class="contact-label">Instagram</div>
                         <div class="contact-value">@moskalenko_taras</div>
                     </div>
                 </a>
@@ -801,27 +670,23 @@
                 </div>
                 <div class="about-card">
                     <h3 style="color:var(--text);">💬 Мови</h3>
-                    <p>Українська · Російська · Німецька (B1+) · Англійська (B2)</p>
+                    <p>Українська (рідна) · Російська · Німецька (A2) · Англійська (A2)</p>
                 </div>
                 <div class="about-card">
                     <h3 style="color:var(--text);">🏔️ Улюблене</h3>
-                    <p>Походи, спорт, прогулянки в лісі, спонтанна творчість, музика, кіно з друзями</p>
+                    <p>Походи, спорт, прогулянки, творчість, музика, спонтанне кіно з друзями</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
     <p>© 2026 Тарас Москаленко · Зроблено з ❤️ в Карлсруе</p>
-    <p style="margin-top:4px;font-size:0.75rem;color:var(--text3);">Build > Plan. Люди > Технології.</p>
+    <p style="margin-top:4px;font-size:0.72rem;color:var(--text3);">Build > Plan. Люди > Технології.</p>
 </footer>
 
 <script>
-window.addEventListener('scroll', () => {
-    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
-});
 document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
         e.preventDefault();
@@ -830,6 +695,5 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     });
 });
 </script>
-
 </body>
 </html>
