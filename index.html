@@ -351,9 +351,8 @@ const ctx = canvas.getContext('2d');
 const W = canvas.width, H = canvas.height;
 const CX = W/2, CY = H/2;
 
-// Load photo for background reference
+// Photo loaded but no bg - just for reference dimensions
 const img = new Image();
-img.src = 'me.jpg';
 
 let particles = [];
 const PHASE_CHAOS = 0, PHASE_FORMING = 1, PHASE_FORMED = 2, PHASE_SCATTER = 3;
@@ -366,7 +365,7 @@ const CHAOS_DURATION = 480;
 
 function initParticles() {
     const all = [...FACEPOINTS.contour, ...FACEPOINTS.fill];
-    const scale = 0.85;
+            const scale = 0.75;
     particles = all.map(p => {
         const tx = CX + (p.x - 0.5) * W * scale;
         const ty = CY + (p.y - 0.5) * H * scale;
@@ -435,17 +434,9 @@ function update() {
 function draw() {
     ctx.clearRect(0, 0, W, H);
     
-    // Draw photo as subtle background
-    if (img.complete && img.naturalWidth > 0) {
-        ctx.save();
-        ctx.globalAlpha = 0.08;
-        // Draw to fit canvas
-        const s = Math.min(W/img.naturalWidth, H/img.naturalHeight);
-        const dx = (W - img.naturalWidth * s) / 2;
-        const dy = (H - img.naturalHeight * s) / 2;
-        ctx.drawImage(img, dx, dy, img.naturalWidth * s, img.naturalHeight * s);
-        ctx.restore();
-    }
+    // Draw subtle background tint
+    ctx.fillStyle = '#f8fafc';
+    ctx.fillRect(0, 0, W, H);
     
     // Draw particles - single color, dark
     const isFormed = phase === PHASE_FORMED;
@@ -471,9 +462,7 @@ function animate() {
 }
 
 initParticles();
-// Wait for image to load before starting
-if (img.complete) animate();
-else img.onload = animate;
+animate();
 
 // Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(a => {
