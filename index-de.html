@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taras Moskalenko — Mensch. Schöpfer.</title>
+<meta name="description" content="Taras Moskalenko — Entwicklungsspezialist. Animation für Kinder, 3D-Druck, Game-Development, Kreativität, Psychologie.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=JetBrains+Mono:wght@200;300;400&display=swap" rel="stylesheet">
+<script src="face-data.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,system-ui,sans-serif;background:#faf5eb;color:#353a43;line-height:1.8;-webkit-font-smoothing:antialiased;font-size:17px;font-weight:300}
+
+.container{max-width:720px;margin:0 auto;padding:0 32px}
+.mono{font-family:'JetBrains Mono',monospace;font-weight:300}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,245,235,0.85);backdrop-filter:blur(16px);border-bottom:1px solid #e1e4e8}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:720px;margin:0 auto;padding:14px 32px}
+.nav-logo{font-family:'Inter',sans-serif;font-weight:300;font-size:0.9rem;color:#25282d;letter-spacing:0.02em}
+.nav-links{display:flex;gap:2px;list-style:none;flex-wrap:wrap}
+.nav-links a{color:#5c6b7e;text-decoration:none;font-size:0.82rem;font-weight:300;padding:5px 14px;border-radius:20px;transition:all 0.2s;letter-spacing:0.02em}
+.nav-links a:hover{color:#25282d;background:rgba(92,107,126,0.08)}
+
+.lang-switch{position:fixed;top:20px;right:20px;z-index:100;background:#fff;border:1px solid #e1e4e8;border-radius:40px;padding:6px 16px;font-size:13px;color:#5c6b7e;text-decoration:none;font-weight:300;transition:all 0.2s}
+.lang-switch:hover{border-color:#5c6b7e;color:#25282d}
+
+/* HERO */
+.hero{min-height:90vh;display:flex;align-items:center;justify-content:center;background:#faf5eb;color:#25282d;padding:100px 0 60px;text-align:center;position:relative}
+.hero h1{font-size:clamp(2.2rem,5.5vw,3.6rem);font-weight:200;letter-spacing:0.04em;line-height:1.1;margin-bottom:12px;color:#25282d}
+.hero h1 .hl{color:#5c6b7e}
+.hero-tagline{font-size:clamp(1.1rem,2.5vw,1.4rem);color:#5c6b7e;max-width:520px;margin:0 auto 12px;font-weight:300;letter-spacing:0.02em}
+.hero-sub{font-size:clamp(0.9rem,1.8vw,1rem);color:#8b8f99;max-width:460px;margin:0 auto 40px;font-weight:300;line-height:1.7}
+.hero-visual{margin-bottom:40px}
+.hero-photo-wrap{background:#fff;display:inline-block;margin-bottom:32px;line-height:0}
+#particleCanvas{width:340px;height:340px;display:block}
+.hero-cta{display:inline-flex;align-items:center;gap:10px;background:#3b82f6;color:#fff;padding:14px 32px;border-radius:40px;font-size:0.9rem;font-weight:400;text-decoration:none;letter-spacing:0.02em;transition:background 0.3s}
+.hero-cta:hover{background:#2563eb}
+
+/* SECTIONS */
+section{padding:96px 0}
+section:nth-child(odd){background:#faf5eb}
+section:nth-child(even){background:#fff}
+.section-label{font-size:11px;font-family:'JetBrains Mono',monospace;font-weight:300;text-transform:uppercase;letter-spacing:0.08em;color:#8b8f99;margin-bottom:16px}
+h2{font-size:clamp(1.4rem,3.2vw,1.8rem);font-weight:300;letter-spacing:0.04em;margin-bottom:20px;color:#25282d;line-height:1.2}
+h2 + .sub{color:#6e737d;font-size:1rem;margin-bottom:40px;max-width:560px;line-height:1.7;font-weight:300}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr;gap:12px}
+.about-card{background:#faf5eb;border:1px solid #e1e4e8;border-radius:20px;padding:28px 32px}
+.about-card h3{font-size:1rem;font-weight:400;margin-bottom:10px;color:#25282d;letter-spacing:0.02em}
+.about-card p{color:#353a43;font-size:0.95rem;line-height:1.8;font-weight:300}
+
+/* FACETS */
+.facets-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.facet-card{background:#faf5eb;border:1px solid #e1e4e8;border-radius:20px;padding:28px 24px;text-align:center;transition:border-color 0.2s}
+.facet-card:hover{border-color:#5c6b7e}
+.facet-icon{font-size:1.6rem;margin-bottom:10px}
+.facet-card h3{font-family:'Inter',sans-serif;font-size:0.9rem;font-weight:400;margin-bottom:6px;color:#25282d}
+.facet-card p{color:#6e737d;font-size:0.85rem;line-height:1.6;font-weight:300}
+
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:1fr;gap:12px}
+.project-card-link{text-decoration:none;color:inherit;display:block;border-radius:20px}
+.project-card{background:#faf5eb;border:1px solid #e1e4e8;border-radius:20px;padding:24px 28px;transition:border-color 0.2s}
+.project-card:hover{border-color:#5c6b7e}
+.project-cat{font-size:11px;font-family:'JetBrains Mono',monospace;font-weight:300;text-transform:uppercase;letter-spacing:0.06em;color:#8b8f99;margin-bottom:6px}
+.project-card h3{font-size:1rem;font-weight:400;margin-bottom:6px;color:#25282d}
+.project-card p{color:#6e737d;font-size:0.85rem;line-height:1.7;margin-bottom:10px;font-weight:300}
+.project-techs{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px}
+.project-tech{font-size:0.7rem;font-weight:300;padding:3px 10px;border-radius:10px;border:1px solid #e1e4e8;color:#5c6b7e}
+.project-links{display:flex;gap:8px}
+.project-links a{color:#8b8f99;font-size:0.8rem;font-weight:300;text-decoration:none;transition:color 0.2s;display:inline-flex;align-items:center;gap:4px;position:relative;z-index:2}
+.project-links a:hover{color:#25282d}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr;gap:12px}
+.contact-links{display:flex;flex-direction:column;gap:8px}
+.contact-item{display:flex;align-items:center;gap:14px;padding:16px 20px;border-radius:20px;background:#faf5eb;border:1px solid #e1e4e8;text-decoration:none;color:#353a43;transition:border-color 0.2s}
+.contact-item:hover{border-color:#5c6b7e}
+.contact-icon{font-size:1.1rem;width:28px;text-align:center}
+.contact-label{font-size:0.73rem;color:#8b8f99;font-weight:300}
+.contact-value{font-size:0.9rem;font-weight:300;color:#25282d}
+
+/* FOOTER */
+footer{background:#faf5eb;border-top:1px solid #e1e4e8;color:#8b8f99;text-align:center;padding:40px 0;font-size:0.85rem;font-weight:300}
+footer a{color:#5c6b7e;text-decoration:none}
+footer a:hover{color:#25282d}
+
+/* ANIMATION */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.8s ease,transform 0.8s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:640px){
+  body{font-size:16px}
+  .hero{min-height:auto;padding:80px 0 50px}
+  .container{padding:0 24px}
+  section{padding:64px 0}
+  .nav-inner{padding:12px 24px}
+  .nav-links a{padding:4px 10px;font-size:0.75rem}
+  #particleCanvas{width:240px;height:240px}
+  .hero h1{font-size:clamp(1.8rem,7vw,2.4rem)}
+  .about-card,.project-card{padding:22px 20px}
+  .facet-card{padding:22px 18px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">✦ Taras Moskalenko</div>
+    <ul class="nav-links">
+      <li><a href="#about">Über mich</a></li>
+      <li><a href="#facets">Facetten</a></li>
+      <li><a href="#projects">Projekte</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+  </div>
+</nav>
+
+<a href="index.html" class="lang-switch">UA 🇺🇦</a>
+
+<!-- HERO -->
+<header class="hero" id="home">
+  <div class="container">
+    <div class="hero-visual">
+      <div class="hero-photo-wrap">
+        <canvas id="particleCanvas" width="400" height="400"></canvas>
+      </div>
+    </div>
+    <div class="section-label" style="color:#8b8f99">Entwicklungsspezialist</div>
+    <h1>Hallo!<br>Ich bin <span class="hl">Taras Moskalenko</span></h1>
+    <div class="hero-tagline">Mensch. Schöpfer. Partner für den Start.</div>
+    <div class="hero-sub">Ich helfe Menschen, den Schritt von «ich will» zu «ich mach» zu gehen. Durch Animation, Technologie, Psychologie, Kreativität und Freiwilligenarbeit.</div>
+    <a href="#projects" class="hero-cta">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+      Projekte ansehen
+    </a>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container fade-in">
+    <div class="section-label">✧ Über mich</div>
+    <h2>Ein Mensch, der Welten verbindet</h2>
+    <div class="about-grid">
+      <div class="about-card"><h3>🌱 Mein Jetzt</h3><p>Am meisten lebe ich im Projekt <strong>«Handlung zum Traum»</strong>. Ein Partner für den ersten Schritt — für Menschen, die ihren Traum verwirklichen wollen. Ohne Grenzen, ohne Altersbeschränkung, durch kleine reale Experimente.</p></div>
+      <div class="about-card"><h3>🎯 Mission</h3><p>Menschen helfen, ihr Potenzial durch Kreativität und Technologie zu entfalten. Die besten Lösungen entstehen an der Schnittstelle der Disziplinen.</p></div>
+      <div class="about-card"><h3>📚 Bildung & Fokus</h3><p>Psychologie, Physiologie des ZNS, Neurochemie, neuronales Paradigma, Behaviorismus. Ich verbreite Animation als Werkzeug zur kindlichen Entwicklung.</p></div>
+      <div class="about-card"><h3>🌍 Communities</h3><p>Koordinator der 3D-Farm <strong>Stina</strong>, Gründer von <strong>Infinity Braves</strong>, Initiator von <strong>«Handlung zum Traum»</strong>. Ich liebe Wanderungen und Sport an der frischen Luft 🏔️</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FACETS -->
+<section id="facets">
+  <div class="container fade-in">
+    <div class="section-label">✦ Facetten</div>
+    <h2>Was ich kann und liebe</h2>
+    <div class="facets-grid">
+      <div class="facet-card"><div class="facet-icon">🌱</div><h3>Entwicklung</h3><p>Ich helfe Menschen, von «ich will» zu «ich mach» zu kommen. Durch Animation, Technologie, Gespräche.</p></div>
+      <div class="facet-card"><div class="facet-icon">🎬</div><h3>Animation für Kinder</h3><p>Ich bringe Erwachsenen bei, mit Kindern Trickfilme zu machen. Ein Entwicklungsinstrument: Projektdenken, Festivals.</p></div>
+      <div class="facet-card"><div class="facet-icon">🖨️</div><h3>3D-Druck</h3><p>Freiwilligen-3D-Farm «Stina». Medizinkomponenten, Prothesen, Lehrmodelle.</p></div>
+      <div class="facet-card"><div class="facet-icon">🎮</div><h3>Game-Development</h3><p>HTML5-Spiele: Recoil Gun, BitSprite, Habitat OS. Physik, Canvas, Spiel als Entwicklung.</p></div>
+      <div class="facet-card"><div class="facet-icon">🤖</div><h3>KI & Automatisierung</h3><p>Multi-Agent-Systeme, LLM-Pipelines, Telegram-Bots. KI als Werkzeug.</p></div>
+      <div class="facet-card"><div class="facet-icon">🧠</div><h3>Psychologie</h3><p>Physiologie des ZNS, neuronales Paradigma, Behaviorismus. Screening, Forschung.</p></div>
+      <div class="facet-card"><div class="facet-icon">🎵</div><h3>Musik</h3><p>Amateur-Tracks, Gesang. <a href="https://soundcloud.com/user-482406102" target="_blank" style="color:#5c6b7e;text-decoration:none;border-bottom:1px solid #e1e4e8;">SoundCloud →</a></p></div>
+      <div class="facet-card"><div class="facet-icon">🎨</div><h3>Kunst & Improvisation</h3><p>Collagen, Malen, Kunst mit Müll. Spontanfilme mit Freunden.</p></div>
+      <div class="facet-card"><div class="facet-icon">🏔️</div><h3>Aktivität</h3><p>Wanderungen, Sport an der frischen Luft, Waldspaziergänge.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container fade-in">
+    <div class="section-label">✧ Projekte</div>
+    <h2>Projekte</h2>
+    <div class="projects-grid">
+      <a href="https://fil-m.github.io/diya-do-mriyi/index-de.html" target="_blank" class="project-card-link"><div class="project-card"><div class="project-cat">🌱 Sinn dahinter</div><h3>★ Handlung zum Traum</h3><p>Mein zentrales Projekt. Ein Partner für den Start: vom Traum zur ersten realen Handlung. Kostenlos, ohne Altersgrenze.</p><div class="project-links"><a href="https://github.com/Fil-m/diya-do-mriyi" target="_blank" onclick="event.stopPropagation()">🐙 GitHub</a></div></div></a>
+      <a href="https://fil-m.github.io/animation_mentors/" target="_blank" class="project-card-link"><div class="project-card"><div class="project-cat">🎬 Animation & Entwicklung</div><h3>Animation Mentors</h3><p>Ich bringe Erwachsenen bei, mit Kindern Trickfilme zu machen. ADHD-friendly, Festivals (Annecy, Zlín).</p><div class="project-techs"><span class="project-tech">HTML</span><span class="project-tech">CSS</span><span class="project-tech">JS</span></div><div class="project-links"><a href="https://github.com/Fil-m/animation_mentors" target="_blank" onclick="event.stopPropagation()">🐙 GitHub</a></div></div></a>
+      <a href="https://fil-m.github.io/stina-3d/" target="_blank" class="project-card-link"><div class="project-card"><div class="project-cat">🖨️ 3D-Druck & Freiwilligenarbeit</div><h3>Stina 3D Druckerei</h3><p>Freiwilligen-3D-Farm in Karlsruhe. Medizinkomponenten, Prothesen. 8 Drucker.</p><div class="project-techs"><span class="project-tech">HTML</span><span class="project-tech">Klipper</span><span class="project-tech">FreeCAD</span></div><div class="project-links"><a href="https://github.com/Fil-m/stina-3d" target="_blank" onclick="event.stopPropagation()">🐙 GitHub</a></div></div></a>
+      <a href="https://fil-m.github.io/kids-games/" target="_blank" class="project-card-link"><div class="project-card"><div class="project-cat">🎮 Lernspiele</div><h3>🎮 Kinder-Lernspiele</h3><p>Alphabet (3 Sprachen), Zahlen, Farben, Rätsel, Rechnen. Wunder Tablet + Letter Learn + Math Play. Mit Sprachausgabe & Konfetti!</p><div class="project-techs"><span class="project-tech">JavaScript</span><span class="project-tech">Canvas</span><span class="project-tech">HTML5</span></div><div class="project-links"><a href="https://github.com/Fil-m/kids-games" target="_blank" onclick="event.stopPropagation()">🐙 GitHub</a></div></div></a>
+      <a href="https://fil-m.github.io/recoil-game/" target="_blank" class="project-card-link"><div class="project-card"><div class="project-cat">🎮 Spiele</div><h3>Recoil Gun</h3><p>Browser-Shooter mit Rückstoß-Physik. Canvas, Physik von Grund auf.</p><div class="project-techs"><span class="project-tech">JavaScript</span><span class="project-tech">Canvas</span></div></div></a>
+      <a href="https://fil-m.github.io/--braves/" target="_blank" class="project-card-link"><div class="project-card"><div class="project-cat">🧠 Community</div><h3>Infinity Braves</h3><p>Unterstützungsgruppe für neurodivergente Erwachsene (ASS, ADHS) in Karlsruhe.</p><div class="project-techs"><span class="project-tech">Django</span><span class="project-tech">Python</span></div></div></a>
+      <a href="https://fil-m.github.io/habitat-os-test/" target="_blank" class="project-card-link"><div class="project-card"><div class="project-cat">🎮 Plattform</div><h3>Habitat OS</h3><p>Mobile Spielkonsole. Match-3, Skin-Shop, modulares System.</p><div class="project-techs"><span class="project-tech">HTML</span><span class="project-tech">JS</span><span class="project-tech">Python</span></div><div class="project-links"><a href="https://github.com/Fil-m/habitat-os-workshop" target="_blank" onclick="event.stopPropagation()">🐙 Workshop</a></div></div></a>
+      <a href="https://fil-m.github.io/akira-mental-math/" target="_blank" class="project-card-link"><div class="project-card"><div class="project-cat">📚 Bildung</div><h3>Akira Mental Math</h3><p>Generator für Übungen zur mentalen Arithmetik am Abakus.</p><div class="project-techs"><span class="project-tech">HTML</span><span class="project-tech">JS</span></div><div class="project-links"><a href="https://github.com/Fil-m/akira-mental-math" target="_blank" onclick="event.stopPropagation()">🐙 GitHub</a></div></div></a>
+      <a href="https://fil-m.github.io/bitsprite/" target="_blank" class="project-card-link"><div class="project-card"><div class="project-cat">🎮 Spiele</div><h3>BitSprite</h3><p>Platformer / Sandbox. Pixelwelten, Quests.</p><div class="project-techs"><span class="project-tech">JavaScript</span><span class="project-tech">Canvas</span></div></div></a>
+      <a href="https://github.com/Fil-m/neuromarker-suite" target="_blank" class="project-card-link"><div class="project-card"><div class="project-cat">🧠 Neuropsychologie</div><h3>NeuroMarker Suite</h3><p>Screening-Tools. Kognitive Tests, Analyse.</p><div class="project-techs"><span class="project-tech">Python</span><span class="project-tech">JS</span></div></div></a>
+      <a href="https://fil-m.github.io/aim-lab-scientist/" target="_blank" class="project-card-link"><div class="project-card"><div class="project-cat">🔬 Forschung</div><h3>Aim Lab Scientist</h3><p>NeuroAim Research Suite. Aufmerksamkeit, sensomotorische Reaktionen.</p><div class="project-techs"><span class="project-tech">JavaScript</span><span class="project-tech">Chart.js</span></div><div class="project-links"><a href="https://github.com/Fil-m/aim-lab-scientist" target="_blank" onclick="event.stopPropagation()">🐙 GitHub</a></div></div></a>
+      <a href="https://github.com/Fil-m/hermes-skva" target="_blank" class="project-card-link"><div class="project-card"><div class="project-cat">🤖 KI & Agenten</div><h3>Hermes SKVA</h3><p>Multi-Agent-Produktionssystem. Verteilte KI-Agenten.</p><div class="project-techs"><span class="project-tech">Python</span><span class="project-tech">Hermes</span></div></div></a>
+      <a href="https://github.com/Fil-m/vlog-automator" target="_blank" class="project-card-link"><div class="project-card"><div class="project-cat">🎬 Video & KI</div><h3>Vlog Automator</h3><p>KI-Videobearbeitung. Whisper, Analyse, DaVinci Resolve.</p><div class="project-techs"><span class="project-tech">Python</span><span class="project-tech">Whisper</span></div></div></a>
+      <a href="https://fil-m.github.io/art-picnic/" target="_blank" class="project-card-link"><div class="project-card"><div class="project-cat">🎨 Kreativität</div><h3>Art Picnic</h3><p>Monatliches Art-Picknick: Stop-Motion im Freien.</p><div class="project-techs"><span class="project-tech">HTML</span><span class="project-tech">CSS</span></div></div></a>
+      <a href="https://github.com/Fil-m/eme" target="_blank" class="project-card-link"><div class="project-card"><div class="project-cat">⚙️ Plattform</div><h3>EME</h3><p>Modulare Ökosystem. Vue + Django, Mesh, lokale KI.</p><div class="project-techs"><span class="project-tech">Python</span><span class="project-tech">Vue</span><span class="project-tech">Django</span></div></div></a>
+      <a href="https://yelyzavetaandriievska.pythonanywhere.com/" target="_blank" class="project-card-link"><div class="project-card"><div class="project-cat">🎮 Django Game</div><h3>Game Project</h3><p>Django-Spiel auf PythonAnywhere. Django → Deployment.</p><div class="project-techs"><span class="project-tech">Django</span><span class="project-tech">Python</span></div></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container fade-in">
+    <div class="section-label">✧ Kontakt</div>
+    <h2>Kontakt</h2>
+    <div class="contact-grid">
+      <div class="contact-links">
+        <a href="https://github.com/Fil-m" target="_blank" class="contact-item"><div class="contact-icon">🐙</div><div><div class="contact-label">GitHub</div><div class="contact-value">github.com/Fil-m</div></div></a>
+        <a href="https://www.instagram.com/moskalenko_taras/" target="_blank" class="contact-item"><div class="contact-icon">📸</div><div><div class="contact-label">Instagram</div><div class="contact-value">@moskalenko_taras</div></div></a>
+        <a href="https://soundcloud.com/user-482406102" target="_blank" class="contact-item"><div class="contact-icon">🎵</div><div><div class="contact-label">SoundCloud (Musik)</div><div class="contact-value">soundcloud.com/user-482406102</div></div></a>
+        <a href="https://t.me/robosapiens8" target="_blank" class="contact-item"><div class="contact-icon">✈️</div><div><div class="contact-label">Telegram</div><div class="contact-value">@robosapiens8</div></div></a>
+        <a href="mailto:moskalenko.t.o@gmail.com" class="contact-item"><div class="contact-icon">📧</div><div><div class="contact-label">Email</div><div class="contact-value">moskalenko.t.o@gmail.com</div></div></a>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
+        <div class="about-card" style="background:none;padding:0;border:none"><h3 style="color:#25282d;font-size:0.9rem">📍 Standort</h3><p style="color:#6e737d;font-size:0.85rem">Karlsruhe, Deutschland · Kyjiw, Ukraine</p></div>
+        <div class="about-card" style="background:none;padding:0;border:none"><h3 style="color:#25282d;font-size:0.9rem">💬 Sprachen</h3><p style="color:#6e737d;font-size:0.85rem">Ukrainisch · Deutsch (A2) · Englisch (A2)</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Taras Moskalenko · <a href="https://fil-m.github.io/diya-do-mriyi/impressum.html">Impressum</a> · <a href="https://fil-m.github.io/diya-do-mriyi/datenschutz.html">Datenschutz</a></p>
+    <p style="margin-top:6px;font-size:0.75rem;color:#8b8f99">Build > Plan. Menschen > Technologie.</p>
+  </div>
+</footer>
+
+<script>
+// ─── PIXEL PARTICLE SYSTEM ───
+const canvas = document.getElementById('particleCanvas');
+const ctx = canvas.getContext('2d');
+const W = canvas.width, H = canvas.height;
+
+let particles = [];
+const PHASE_CHAOS = 0, PHASE_FORMING = 1, PHASE_FORMED = 2, PHASE_SCATTER = 3;
+let phase = PHASE_CHAOS;
+let phaseTimer = 0;
+const FORM_DURATION = 200;
+const HOLD_DURATION = 400;
+const SCATTER_DURATION = 150;
+const CHAOS_DURATION = 400;
+
+function initParticles() {
+    const data = FACEPIXELS;
+    const grid = data.grid || 45;
+    const scale = 1.0;
+    const cellW = (W * scale) / grid;
+    const cellH = (H * scale) / grid;
+    const offsetX = (W - W * scale) / 2;
+    const offsetY = (H - H * scale) / 2;
+
+    particles = data.particles.map(p => {
+        const tx = offsetX + p.x * W * scale + cellW/2;
+        const ty = offsetY + p.y * H * scale + cellH/2;
+        return {
+            x: Math.random() * W, y: Math.random() * H,
+            tx, ty, sx: 0, sy: 0,
+            vx: (Math.random() - 0.5) * 2,
+            vy: (Math.random() - 0.5) * 2,
+            r: p.r, g: p.g, b: p.b,
+            size: 4 + Math.random() * 2
+        };
+    });
+    particles.forEach(p => {
+        p.sx = Math.random() * W;
+        p.sy = Math.random() * H;
+    });
+}
+
+function lerp(a, b, t) { return a + (b - a) * t; }
+
+function update() {
+    phaseTimer++;
+    if (phase === PHASE_CHAOS && phaseTimer > CHAOS_DURATION) {
+        phase = PHASE_FORMING; phaseTimer = 0;
+        particles.forEach(p => { p.sx = p.x; p.sy = p.y; });
+    } else if (phase === PHASE_FORMING && phaseTimer > FORM_DURATION) {
+        phase = PHASE_FORMED; phaseTimer = 0;
+    } else if (phase === PHASE_FORMED && phaseTimer > HOLD_DURATION) {
+        phase = PHASE_SCATTER; phaseTimer = 0;
+    } else if (phase === PHASE_SCATTER && phaseTimer > SCATTER_DURATION) {
+        phase = PHASE_CHAOS; phaseTimer = 0;
+    }
+
+    const t = phaseTimer;
+    particles.forEach(p => {
+        if (phase === PHASE_CHAOS) {
+            p.vx += (Math.random() - 0.5) * 0.5;
+            p.vy += (Math.random() - 0.5) * 0.5;
+            p.vx *= 0.96;
+            p.vy *= 0.96;
+            p.x += p.vx;
+            p.y += p.vy;
+            if (p.x < 0 || p.x > W) p.vx *= -0.5;
+            if (p.y < 0 || p.y > H) p.vy *= -0.5;
+            p.x = Math.max(0, Math.min(W, p.x));
+            p.y = Math.max(0, Math.min(H, p.y));
+        } else if (phase === PHASE_FORMING) {
+            const progress = Math.min(t / FORM_DURATION, 1);
+            const ease = 1 - Math.pow(1 - progress, 3);
+            p.x = lerp(p.sx, p.tx, ease);
+            p.y = lerp(p.sy, p.ty, ease);
+        } else if (phase === PHASE_FORMED) {
+            const breathe = Math.sin(t * 0.02 + p.tx * 0.1) * 0.3;
+            p.x = p.tx + breathe;
+            p.y = p.ty + Math.cos(t * 0.02 + p.ty * 0.1) * 0.3;
+        } else if (phase === PHASE_SCATTER) {
+            const progress = Math.min(t / SCATTER_DURATION, 1);
+            const ease = progress * progress;
+            p.x = lerp(p.tx, p.sx, ease);
+            p.y = lerp(p.ty, p.sy, ease);
+        }
+    });
+}
+
+function draw() {
+    ctx.clearRect(0, 0, W, H);
+    const isFormed = phase === PHASE_FORMED;
+    const isForming = phase === PHASE_FORMING;
+    const isScatter = phase === PHASE_SCATTER;
+    const prog = Math.min(phaseTimer / FORM_DURATION, 1);
+    const scatterProg = Math.min(phaseTimer / SCATTER_DURATION, 1);
+
+    particles.forEach(p => {
+        let sz, alpha;
+        if (isFormed) { sz = 4.5; alpha = 1.0; }
+        else if (isForming) { sz = 2.5 + prog * 3; alpha = 0.3 + prog * 0.7; }
+        else if (isScatter) { sz = 4.5 * (1 - scatterProg * 0.5); alpha = 1.0 - scatterProg * 0.8; }
+        else { sz = 2; alpha = 0.2; }
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, sz, 0, Math.PI * 2);
+        if (isFormed || isForming) { ctx.fillStyle = `rgba(${p.r},${p.g},${p.b},${alpha})`; }
+        else if (isScatter) {
+            const gray = Math.round(0.3 * p.r + 0.59 * p.g + 0.11 * p.b);
+            const mix = scatterProg;
+            const r = Math.round(p.r + (gray - p.r) * mix);
+            const g = Math.round(p.g + (gray - p.g) * mix);
+            const b = Math.round(p.b + (gray - p.b) * mix);
+            ctx.fillStyle = `rgba(${r},${g},${b},${alpha})`;
+        } else { ctx.fillStyle = `rgba(148,163,184,${alpha})`; }
+        ctx.fill();
+    });
+}
+
+function animate() {
+    update();
+    draw();
+    requestAnimationFrame(animate);
+}
+
+initParticles();
+animate();
+
+// ─── FADE-IN ON SCROLL ───
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if(t) t.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+});
+</script>
+</body>
+</html>
