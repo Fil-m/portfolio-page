@@ -32,7 +32,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,245,235,
 .hero-sub{font-size:clamp(0.9rem,1.8vw,1rem);color:#8b8f99;max-width:460px;margin:0 auto 40px;font-weight:300;line-height:1.7}
 .hero-visual{margin-bottom:40px}
 .hero-photo-wrap{background:#fff;display:inline-block;margin-bottom:32px;line-height:0}
-#particleCanvas{width:280px;height:280px;display:block}
+#particleCanvas{width:340px;height:340px;display:block}
 .hero-cta{display:inline-flex;align-items:center;gap:10px;background:#3b82f6;color:#fff;padding:14px 32px;border-radius:40px;font-size:0.9rem;font-weight:400;text-decoration:none;letter-spacing:0.02em;transition:background 0.3s}
 .hero-cta:hover{background:#2563eb}
 
@@ -97,7 +97,7 @@ footer a:hover{color:#25282d}
   section{padding:64px 0}
   .nav-inner{padding:12px 24px}
   .nav-links a{padding:4px 10px;font-size:0.75rem}
-  #particleCanvas{width:200px;height:200px}
+  #particleCanvas{width:240px;height:240px}
   .hero h1{font-size:clamp(1.8rem,7vw,2.4rem)}
   .about-card,.project-card{padding:22px 20px}
   .facet-card{padding:22px 18px}
@@ -242,7 +242,7 @@ const CHAOS_DURATION = 400;
 function initParticles() {
     const data = FACEPIXELS;
     const grid = data.grid || 45;
-    const scale = 0.85;
+    const scale = 1.0;
     const cellW = (W * scale) / grid;
     const cellH = (H * scale) / grid;
     const offsetX = (W - W * scale) / 2;
